@@ -1,0 +1,7 @@
+H:\Projects\C#\GeometricComposition\GCXNA\bin\x86\Release\GCXNAContent\prism.xnb
+H:\Projects\C#\GeometricComposition\GCXNA\bin\x86\Release\GCXNA.dll
+H:\Projects\C#\GeometricComposition\GCXNA\bin\x86\Release\GCXNA.pdb
+H:\Projects\C#\GeometricComposition\GCXNA\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+H:\Projects\C#\GeometricComposition\GCXNA\obj\x86\Release\GCXNA.dll
+H:\Projects\C#\GeometricComposition\GCXNA\obj\x86\Release\GCXNA.pdb
+H:\Projects\C#\GeometricComposition\GCXNA\obj\x86\Release\GCXNA.csprojResolveAssemblyReference.cache

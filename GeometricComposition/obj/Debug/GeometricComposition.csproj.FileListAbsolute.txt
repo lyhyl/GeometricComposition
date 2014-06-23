@@ -1,0 +1,11 @@
+H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GeometricComposition\bin\Debug\GCXNAContent\prism.xnb
+H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GeometricComposition\bin\Debug\GeometricComposition.exe
+H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GeometricComposition\bin\Debug\GeometricComposition.pdb
+H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GeometricComposition\bin\Debug\GCXNA.dll
+H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GeometricComposition\bin\Debug\GCXNA.pdb
+H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GeometricComposition\obj\Debug\GeometricComposition.csprojResolveAssemblyReference.cache
+H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GeometricComposition\obj\Debug\GeometricComposition.GeometricComposition.resources
+H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GeometricComposition\obj\Debug\GeometricComposition.Properties.Resources.resources
+H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GeometricComposition\obj\Debug\GeometricComposition.csproj.GenerateResource.Cache
+H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GeometricComposition\obj\Debug\GeometricComposition.exe
+H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GeometricComposition\obj\Debug\GeometricComposition.pdb

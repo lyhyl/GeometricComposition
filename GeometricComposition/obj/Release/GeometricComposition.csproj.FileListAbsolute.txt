@@ -1,0 +1,15 @@
+H:\Projects\C#\GeometricComposition\GeometricComposition\bin\Release\GCXNAContent\prism.xnb
+H:\Projects\C#\GeometricComposition\GeometricComposition\bin\Release\GeometricComposition.exe
+H:\Projects\C#\GeometricComposition\GeometricComposition\bin\Release\GeometricComposition.pdb
+H:\Projects\C#\GeometricComposition\GeometricComposition\bin\Release\GCXNA.dll
+H:\Projects\C#\GeometricComposition\GeometricComposition\bin\Release\Microsoft.Xna.Framework.Graphics.dll
+H:\Projects\C#\GeometricComposition\GeometricComposition\bin\Release\Microsoft.Xna.Framework.dll
+H:\Projects\C#\GeometricComposition\GeometricComposition\bin\Release\GCXNA.pdb
+H:\Projects\C#\GeometricComposition\GeometricComposition\bin\Release\Microsoft.Xna.Framework.Graphics.xml
+H:\Projects\C#\GeometricComposition\GeometricComposition\bin\Release\Microsoft.Xna.Framework.xml
+H:\Projects\C#\GeometricComposition\GeometricComposition\obj\Release\GeometricComposition.csprojResolveAssemblyReference.cache
+H:\Projects\C#\GeometricComposition\GeometricComposition\obj\Release\GeometricComposition.GeometricComposition.resources
+H:\Projects\C#\GeometricComposition\GeometricComposition\obj\Release\GeometricComposition.Properties.Resources.resources
+H:\Projects\C#\GeometricComposition\GeometricComposition\obj\Release\GeometricComposition.csproj.GenerateResource.Cache
+H:\Projects\C#\GeometricComposition\GeometricComposition\obj\Release\GeometricComposition.exe
+H:\Projects\C#\GeometricComposition\GeometricComposition\obj\Release\GeometricComposition.pdb
