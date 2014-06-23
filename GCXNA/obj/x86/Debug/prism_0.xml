@@ -3,7 +3,7 @@
   <Asset Type="Graphics:MeshContent">
     <Name>Cylinder001</Name>
     <Identity>
-      <SourceFilename>H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GCXNAContent\prism.FBX</SourceFilename>
+      <SourceFilename>H:\Projects\C#\GeometricComposition\GCXNAContent\prism.FBX</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <OpaqueData>

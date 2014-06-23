@@ -28,30 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mvc = new GCXNA.XNADisplayControl();
             this.SplitPlane = new System.Windows.Forms.SplitContainer();
-            this.GenerateBtn = new System.Windows.Forms.Button();
+            this.mvc = new GCXNA.XNADisplayControl();
             this.FacePointListBox = new System.Windows.Forms.ListBox();
+            this.GenerateBtn = new System.Windows.Forms.Button();
+            this.ToolBar = new System.Windows.Forms.ToolStrip();
             ((System.ComponentModel.ISupportInitialize)(this.SplitPlane)).BeginInit();
             this.SplitPlane.Panel1.SuspendLayout();
             this.SplitPlane.Panel2.SuspendLayout();
             this.SplitPlane.SuspendLayout();
             this.SuspendLayout();
             // 
-            // mvc
-            // 
-            this.mvc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mvc.Location = new System.Drawing.Point(0, 0);
-            this.mvc.Model = null;
-            this.mvc.Name = "mvc";
-            this.mvc.Size = new System.Drawing.Size(450, 442);
-            this.mvc.TabIndex = 0;
-            this.mvc.Text = "modelViewerControl1";
-            // 
             // SplitPlane
             // 
             this.SplitPlane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SplitPlane.Location = new System.Drawing.Point(0, 0);
+            this.SplitPlane.Location = new System.Drawing.Point(0, 25);
             this.SplitPlane.Name = "SplitPlane";
             // 
             // SplitPlane.Panel1
@@ -62,9 +53,30 @@
             // 
             this.SplitPlane.Panel2.Controls.Add(this.FacePointListBox);
             this.SplitPlane.Panel2.Controls.Add(this.GenerateBtn);
-            this.SplitPlane.Size = new System.Drawing.Size(624, 442);
+            this.SplitPlane.Size = new System.Drawing.Size(624, 417);
             this.SplitPlane.SplitterDistance = 450;
             this.SplitPlane.TabIndex = 1;
+            // 
+            // mvc
+            // 
+            this.mvc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mvc.Location = new System.Drawing.Point(0, 0);
+            this.mvc.Model = null;
+            this.mvc.Name = "mvc";
+            this.mvc.Size = new System.Drawing.Size(450, 417);
+            this.mvc.TabIndex = 0;
+            this.mvc.Text = "modelViewerControl1";
+            // 
+            // FacePointListBox
+            // 
+            this.FacePointListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FacePointListBox.FormattingEnabled = true;
+            this.FacePointListBox.ItemHeight = 12;
+            this.FacePointListBox.Location = new System.Drawing.Point(0, 23);
+            this.FacePointListBox.Name = "FacePointListBox";
+            this.FacePointListBox.Size = new System.Drawing.Size(170, 394);
+            this.FacePointListBox.TabIndex = 1;
+            this.FacePointListBox.SelectedIndexChanged += new System.EventHandler(this.FacePointListBox_SelectedIndexChanged);
             // 
             // GenerateBtn
             // 
@@ -77,16 +89,12 @@
             this.GenerateBtn.UseVisualStyleBackColor = true;
             this.GenerateBtn.Click += new System.EventHandler(this.GenerateBtn_Click);
             // 
-            // FacePointListBox
+            // ToolBar
             // 
-            this.FacePointListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FacePointListBox.FormattingEnabled = true;
-            this.FacePointListBox.ItemHeight = 12;
-            this.FacePointListBox.Location = new System.Drawing.Point(0, 23);
-            this.FacePointListBox.Name = "FacePointListBox";
-            this.FacePointListBox.Size = new System.Drawing.Size(170, 419);
-            this.FacePointListBox.TabIndex = 1;
-            this.FacePointListBox.SelectedIndexChanged += new System.EventHandler(this.FacePointListBox_SelectedIndexChanged);
+            this.ToolBar.Location = new System.Drawing.Point(0, 0);
+            this.ToolBar.Name = "ToolBar";
+            this.ToolBar.Size = new System.Drawing.Size(624, 25);
+            this.ToolBar.TabIndex = 2;
             // 
             // GeometricComposition
             // 
@@ -94,6 +102,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 442);
             this.Controls.Add(this.SplitPlane);
+            this.Controls.Add(this.ToolBar);
             this.Name = "GeometricComposition";
             this.Text = "Geometric Composition";
             this.SplitPlane.Panel1.ResumeLayout(false);
@@ -101,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SplitPlane)).EndInit();
             this.SplitPlane.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -110,6 +120,7 @@
         private System.Windows.Forms.SplitContainer SplitPlane;
         private System.Windows.Forms.Button GenerateBtn;
         private System.Windows.Forms.ListBox FacePointListBox;
+        private System.Windows.Forms.ToolStrip ToolBar;
     }
 }
 
