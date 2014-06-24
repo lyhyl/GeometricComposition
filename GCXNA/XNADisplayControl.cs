@@ -26,6 +26,7 @@ namespace GCXNA
     /// </summary>
     public class XNADisplayControl : GraphicsDeviceControl
     {
+        Model model;
         /// <summary>
         /// Gets or sets the current model.
         /// </summary>
@@ -44,8 +45,6 @@ namespace GCXNA
             }
         }
 
-        Model model;
-
 
         // Cache information about the model size and position.
         Matrix[] boneTransforms;
@@ -55,6 +54,22 @@ namespace GCXNA
 
         // Timer controls the rotation speed.
         Stopwatch timer;
+
+        private bool animation = true;
+        public bool Animation
+        {
+            set
+            {
+                animation = value;
+                AnimationEventArgs e = new AnimationEventArgs();
+                if (AnimationChange != null)
+                    AnimationChange(this, e);
+            }
+            get { return animation; }
+        }
+        public class AnimationEventArgs { public AnimationEventArgs() { } }
+        public delegate void AnimaionEventHandler(object sender, AnimationEventArgs e);
+        public event AnimaionEventHandler AnimationChange;
 
 
         /// <summary>
@@ -71,6 +86,8 @@ namespace GCXNA
             ContentManager content = new ContentManager(Services);
             content.RootDirectory = "GCXNAContent";
             Model = content.Load<Model>("prism");
+
+            Animation = true;
 
             content = null;
         }
@@ -101,7 +118,7 @@ namespace GCXNA
                 float nearClip = modelRadius / 100;
                 float farClip = modelRadius * 100;
 
-                Matrix world = Matrix.CreateRotationY(rotation);
+                Matrix world = Animation ? Matrix.CreateRotationY(rotation) : Matrix.Identity;
                 Matrix view = Matrix.CreateLookAt(eyePosition, modelCenter, Vector3.Up);
                 Matrix projection = Matrix.CreatePerspectiveFieldOfView(1, aspectRatio, nearClip, farClip);
 
