@@ -1,0 +1,11 @@
+H:\Projects\C#\dockpanelsuite-development_3.0\WinFormsUI\bin\Release\license.txt
+H:\Projects\C#\dockpanelsuite-development_3.0\WinFormsUI\bin\Release\WeifenLuo.WinFormsUI.Docking.dll
+H:\Projects\C#\dockpanelsuite-development_3.0\WinFormsUI\bin\Release\WeifenLuo.WinFormsUI.Docking.pdb
+H:\Projects\C#\dockpanelsuite-development_3.0\WinFormsUI\obj\Release\WinFormsUI.csprojResolveAssemblyReference.cache
+H:\Projects\C#\dockpanelsuite-development_3.0\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.Docking.Resources.resources
+H:\Projects\C#\dockpanelsuite-development_3.0\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.Docking.ResourcesVS2003.resources
+H:\Projects\C#\dockpanelsuite-development_3.0\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.Docking.Strings.resources
+H:\Projects\C#\dockpanelsuite-development_3.0\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.Docking.StringsVS2003.resources
+H:\Projects\C#\dockpanelsuite-development_3.0\WinFormsUI\obj\Release\WinFormsUI.csproj.GenerateResource.Cache
+H:\Projects\C#\dockpanelsuite-development_3.0\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.Docking.dll
+H:\Projects\C#\dockpanelsuite-development_3.0\WinFormsUI\obj\Release\WeifenLuo.WinFormsUI.Docking.pdb

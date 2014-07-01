@@ -23,7 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -46,17 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileStateMediator.cs" />
     <Compile Include="GeometricComposition.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GeometricComposition.Designer.cs">
       <DependentUpon>GeometricComposition.cs</DependentUpon>
     </Compile>
-    <Compile Include="GCGenerateAction.cs">
+    <Compile Include="GCForm\DisplayForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GCForm\DisplayForm.Designer.cs">
+      <DependentUpon>DisplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCForm\DockingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GCForm\DockingForm.Designer.cs">
+      <DependentUpon>DockingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCForm\ToolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GCForm\ToolForm.Designer.cs">
+      <DependentUpon>ToolForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GCForm\ToolFormGenerateMI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportActionStateMediator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GCForm\DisplayForm.resx">
+      <DependentUpon>DisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GCForm\ToolForm.resx">
+      <DependentUpon>ToolForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GeometricComposition.resx">
       <DependentUpon>GeometricComposition.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,15 +111,16 @@
       <Project>{16b060ae-4635-44ae-82ec-0524144c3504}</Project>
       <Name>GCXNA</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WinFormsUI\WinFormsUI.csproj">
+      <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\StopIcon.bmp" />
+    <None Include="Res\play_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\play_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="res\stop_icon.png" />
+    <None Include="Res\stop_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -61,13 +61,18 @@ namespace GCXNA
             set
             {
                 animation = value;
-                AnimationEventArgs e = new AnimationEventArgs();
+                AnimationEventArgs e = new AnimationEventArgs(value);
                 if (AnimationChange != null)
                     AnimationChange(this, e);
             }
             get { return animation; }
         }
-        public class AnimationEventArgs { public AnimationEventArgs() { } }
+        public class AnimationEventArgs
+        {
+            private bool ani = true;
+            public bool Animation { get { return ani; } private set { ani = value; } }
+            public AnimationEventArgs(bool ani) { Animation = ani; }
+        }
         public delegate void AnimaionEventHandler(object sender, AnimationEventArgs e);
         public event AnimaionEventHandler AnimationChange;
 
