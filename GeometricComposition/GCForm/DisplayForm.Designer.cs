@@ -51,13 +51,15 @@
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "DisplayForm";
             this.Text = "DisplayForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DisplayForm_FormClosing);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public GCXNA.XNADisplayControl ModelViewer;
+        private GCXNA.XNADisplayControl ModelViewer;
+
 
     }
 }

@@ -29,7 +29,10 @@ namespace GCXNA
         /// </summary>
         public void AddService<T>(T service)
         {
-            services.Add(typeof(T), service);
+            // I (LYH) modified
+            Type t = typeof(T);
+            if (!services.ContainsKey(t))
+                services.Add(t, service);
         }
 
 

@@ -5,3 +5,9 @@ H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GCXNA\obj\x86\Deb
 H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GCXNA\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GCXNA\obj\x86\Debug\GCXNA.dll
 H:\Projects\C#\GitHubGeometricComposition\GeometricComposition\GCXNA\obj\x86\Debug\GCXNA.pdb
+H:\Projects\C#\GeometricComposition\GCXNA\bin\x86\Debug\GCXNA.dll
+H:\Projects\C#\GeometricComposition\GCXNA\bin\x86\Debug\GCXNA.pdb
+H:\Projects\C#\GeometricComposition\GCXNA\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+H:\Projects\C#\GeometricComposition\GCXNA\obj\x86\Debug\GCXNA.dll
+H:\Projects\C#\GeometricComposition\GCXNA\obj\x86\Debug\GCXNA.pdb
+H:\Projects\C#\GeometricComposition\GCXNA\obj\x86\Debug\GCXNA.csprojResolveAssemblyReference.cache

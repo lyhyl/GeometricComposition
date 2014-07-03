@@ -31,7 +31,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>gc.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="System" />
@@ -46,7 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="XNAContent\ContentBuilder.cs" />
+    <Compile Include="XNAContent\ErrorLogger.cs" />
     <Compile Include="FileStateMediator.cs" />
+    <Compile Include="GCFile.cs" />
     <Compile Include="GeometricComposition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +104,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="GCDefaultContent\HexagonalPrism.FBX">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,10 +128,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Res\play_icon.png" />
+    <None Include="gc.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Res\stop_icon.png" />
+    <None Include="Res\gc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Res\play_icon.png" />
+    <Content Include="Res\stop_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

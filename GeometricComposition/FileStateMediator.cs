@@ -1,10 +1,5 @@
 ﻿using GeometricComposition.GCForm;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GeometricComposition
 {
@@ -19,6 +14,6 @@ namespace GeometricComposition
             dForm = df;
         }
 
-        public Model Model { get { return dForm.ModelViewer.Model; } }
+        public Model Model { get { return dForm.File.Model; } }
     }
 }

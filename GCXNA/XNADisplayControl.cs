@@ -88,13 +88,13 @@ namespace GCXNA
             // Hook the idle event to constantly redraw our animation.
             Application.Idle += delegate { Invalidate(); };
 
-            ContentManager content = new ContentManager(Services);
+            /*ContentManager content = new ContentManager(Services);
             content.RootDirectory = "GCXNAContent";
-            Model = content.Load<Model>("prism");
+            Model = content.Load<Model>("prism");*/
 
             Animation = true;
 
-            content = null;
+            //content = null;
         }
 
 

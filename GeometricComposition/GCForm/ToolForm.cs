@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GeometricComposition.GCForm
 {
     public partial class ToolForm : DockingForm
     {
-        FileStateMediator File = null;
+        public DisplayForm dForm = null;
 
-        public ToolForm(ReportActionStateMediator ras, FileStateMediator fs)
+        public ToolForm(ReportActionStateMediator ras)
             : base(ras)
         {
-            File = fs;
+            //File = fs;
             InitializeComponent();
         }
 
@@ -63,6 +57,21 @@ namespace GeometricComposition.GCForm
             ActionReporter.CompleteAction(CurrentActionName);
             CurrentActionName = "";
             AsyncWork = null;
+        }
+
+        private void FacePointListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListBox lb = sender as ListBox;
+            if (lb == null)
+                throw new Exception("-NOT-ListBox_SelectedIndexChanged");
+            FPP fpp = lb.SelectedItem as FPP;
+            if (fpp == null)
+                throw new Exception("ListBox_SelectedItem-NOT-FPP");
+            DisplayFPP(fpp);
+        }
+
+        private void DisplayFPP(FPP fpp)
+        {
         }
     }
 }

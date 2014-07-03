@@ -49,6 +49,7 @@
             this.FacePointListBox.Name = "FacePointListBox";
             this.FacePointListBox.Size = new System.Drawing.Size(284, 239);
             this.FacePointListBox.TabIndex = 3;
+            this.FacePointListBox.SelectedIndexChanged += new System.EventHandler(this.FacePointListBox_SelectedIndexChanged);
             // 
             // GenerateBtn
             // 
@@ -69,6 +70,7 @@
             this.Controls.Add(this.FacePointListBox);
             this.Controls.Add(this.GenerateBtn);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.HideOnClose = true;
             this.Name = "ToolForm";
             this.Text = "ToolForm";
             this.ResumeLayout(false);

@@ -146,6 +146,10 @@ namespace GCXNA
                 return Text + "\n\n" + GetType();
             }
 
+            // control is invisible
+            if (ClientSize.Width < 1 || ClientSize.Height < 1)
+                return null;
+
             // Make sure the graphics device is big enough, and is not lost.
             string deviceResetError = HandleDeviceReset();
 

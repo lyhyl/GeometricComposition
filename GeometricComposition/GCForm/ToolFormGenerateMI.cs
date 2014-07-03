@@ -26,7 +26,9 @@ namespace GeometricComposition.GCForm
             ClearData();
 
             List<Point> tmppts = null;
-            foreach (ModelMesh mm in File.Model.Meshes)
+            if (dForm.File.Model == null)
+                return;
+            foreach (ModelMesh mm in dForm.File.Model.Meshes)
                 foreach (ModelMeshPart mmp in mm.MeshParts)
                 {
                     long psize = mmp.VertexBuffer.VertexDeclaration.VertexStride / sizeof(float);
