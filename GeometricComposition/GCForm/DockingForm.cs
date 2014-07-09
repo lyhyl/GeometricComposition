@@ -13,5 +13,9 @@ namespace GeometricComposition.GCForm
 
             ActionReporter = ras;
         }
+
+        public virtual void HandleSelectedFileChanged(object sender, SelectedFileChangedEventArg e)
+        {
+        }
     }
 }

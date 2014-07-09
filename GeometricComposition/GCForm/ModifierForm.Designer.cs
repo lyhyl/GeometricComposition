@@ -1,6 +1,6 @@
 ﻿namespace GeometricComposition.GCForm
 {
-    partial class DisplayForm
+    partial class ModifierForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,41 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ModelViewer = new GCXNA.ModelDisplayer();
             this.SuspendLayout();
             // 
-            // ModelViewer
-            // 
-            this.ModelViewer.Animation = true;
-            this.ModelViewer.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ModelViewer.Camera = null;
-            this.ModelViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ModelViewer.Location = new System.Drawing.Point(0, 0);
-            this.ModelViewer.Model = null;
-            this.ModelViewer.Name = "ModelViewer";
-            this.ModelViewer.Size = new System.Drawing.Size(284, 262);
-            this.ModelViewer.TabIndex = 1;
-            this.ModelViewer.Text = "modelViewerControl1";
-            // 
-            // DisplayForm
+            // ModifierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.ModelViewer);
-            this.DockAreas = ((WeifenLuo.WinFormsUI.Docking.DockAreas)((WeifenLuo.WinFormsUI.Docking.DockAreas.Float | WeifenLuo.WinFormsUI.Docking.DockAreas.Document)));
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Name = "DisplayForm";
-            this.Text = "DisplayForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DisplayForm_FormClosing);
+            this.HideOnClose = true;
+            this.Name = "ModifierForm";
+            this.Text = "Modifier";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private GCXNA.ModelDisplayer ModelViewer;
-
-
     }
 }

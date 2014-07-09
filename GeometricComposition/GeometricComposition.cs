@@ -10,45 +10,62 @@ namespace GeometricComposition
 {
     public partial class GeometricComposition : Form
     {
-        ToolForm toolForm = null;
-        List<DisplayForm> gcUnions = new List<DisplayForm>();
-        DisplayForm selectedDisplayForm = null;
-        ReportActionStateMediator rasm = null;
+        public event SelectedFileChangedEventHandler SelectedFileChanged;
+
+        private List<DisplayForm> gcUnions = new List<DisplayForm>();
+        private List<DockingForm> toolForms = new List<DockingForm>();
+
+        public GCFile selectedFile = null;
+
+        private DataForm dataForm = null;
+        private ModifierForm modifierForm = null;
+        private ReportActionStateMediator rasm = null;
 
         public GeometricComposition()
         {
             InitializeComponent();
-
-            Initialize();
+            InitializeSubForm();
         }
 
-        private void Initialize()
+        private void InitializeSubForm()
         {
             GCFile.RootDirectory = Application.StartupPath;
-
             rasm = new ReportActionStateMediator(this);
-
-            toolForm = new ToolForm(rasm);
-            toolForm.Show(WorkDockPanel, DockState.DockLeft);
+            InitializeToolForms();
         }
 
-        void ModelViewer_AnimationChange(object sender, XNADisplayControl.AnimationEventArgs e)
+        private void InitializeToolForms()
         {
-            TB_StopOrPlayToolBtn.Image = e.Animation ? Resources.stop_icon : Resources.play_icon;
+            // data form
+            dataForm = new DataForm(rasm);
+            dataForm.Show(WorkDockPanel, DockState.DockLeft);
+            SelectedFileChanged += dataForm.HandleSelectedFileChanged;
+            toolForms.Add(dataForm);
+
+            // modifier form
+            modifierForm = new ModifierForm(rasm);
+            modifierForm.Show(WorkDockPanel, DockState.DockRight);
+            SelectedFileChanged += modifierForm.HandleSelectedFileChanged;
+            toolForms.Add(modifierForm);
         }
 
-        private void TB_StopOrPlayToolBtn_Click(object sender, EventArgs e)
+        void WorkDockPanel_ActiveContentChanged(object sender, EventArgs e)
         {
-            //displayForm.ModelViewer.Animation = !displayForm.ModelViewer.Animation;
+            DisplayForm dForm = WorkDockPanel.ActiveContent as DisplayForm;
+            if (dForm != null)
+            {
+                selectedFile = dForm.File;
+                OnSelectedFileChanged();
+            }
         }
 
-        private void toolFormToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OnSelectedFileChanged()
         {
-            if (toolForm.Visible)
-                toolForm.Hide();
-            else
-                toolForm.Show();
-            toolFormToolStripMenuItem.Checked = toolForm.Visible;
+            if (SelectedFileChanged != null)
+            {
+                SelectedFileChangedEventArg e = new SelectedFileChangedEventArg(selectedFile);
+                SelectedFileChanged(this, e);
+            }
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,23 +92,43 @@ namespace GeometricComposition
 
         private void InitializeAddDisplayForm(DisplayForm dForm)
         {
-            dForm.Activated += delegate(object sender, EventArgs ea)
-            {
-                toolForm.dForm = selectedDisplayForm = sender as DisplayForm;
-            };
             dForm.FormClosed += delegate(object sender, FormClosedEventArgs ea)
             {
                 DisplayForm df = sender as DisplayForm;
                 gcUnions.Remove(df);
-                if (selectedDisplayForm == df) selectedDisplayForm = null;
+                if (selectedFile == df.File)
+                {
+                    selectedFile = null;
+                    OnSelectedFileChanged();
+                }
             };
             gcUnions.Add(dForm);
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (selectedDisplayForm != null)
-                selectedDisplayForm.SaveFile();
+            if (selectedFile != null)
+                selectedFile.Save();
+        }
+
+        //TB_StopOrPlayToolBtn.Image = e ? Resources.stop_icon : Resources.play_icon;
+
+        private void dataFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataForm.Visible)
+                dataForm.Hide();
+            else
+                dataForm.Show();
+            dataFormToolStripMenuItem.Checked = dataForm.Visible;
+        }
+
+        private void modifierFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (modifierForm.Visible)
+                modifierForm.Hide();
+            else
+                modifierForm.Show();
+            modifierFormToolStripMenuItem.Checked = modifierForm.Visible;
         }
     }
 }
