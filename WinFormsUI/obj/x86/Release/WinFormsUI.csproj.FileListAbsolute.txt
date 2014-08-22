@@ -1,0 +1,10 @@
+H:\Projects\C#\GeometricComposition\WinFormsUI\bin\x86\Release\license.txt
+H:\Projects\C#\GeometricComposition\WinFormsUI\bin\x86\Release\WeifenLuo.WinFormsUI.Docking.dll
+H:\Projects\C#\GeometricComposition\WinFormsUI\bin\x86\Release\WeifenLuo.WinFormsUI.Docking.pdb
+H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Release\WeifenLuo.WinFormsUI.Docking.Resources.resources
+H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Release\WeifenLuo.WinFormsUI.Docking.ResourcesVS2003.resources
+H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Release\WeifenLuo.WinFormsUI.Docking.Strings.resources
+H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Release\WeifenLuo.WinFormsUI.Docking.StringsVS2003.resources
+H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Release\WinFormsUI.csproj.GenerateResource.Cache
+H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Release\WeifenLuo.WinFormsUI.Docking.dll
+H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Release\WeifenLuo.WinFormsUI.Docking.pdb

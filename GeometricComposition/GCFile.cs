@@ -1,4 +1,5 @@
-﻿using GeometricComposition.XNAContent;
+﻿using GeometricComposition.GCForm;
+using GeometricComposition.XNALibrary;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -9,22 +10,21 @@ namespace GeometricComposition
 {
     public class GCFile
     {
-        public static string RootDirectory { set; get; }
-
+        public DisplayForm DisplayForm = null;
         public string FilePath { private set; get; }
-        private Model model = null;
-        public Model Model
+
+        private GCModel model = null;
+        public GCModel Model
         {
             private set { model = value; }
             get
             {
-                if (model == null && modelPath != "")
-                    try { LoadModel(); }
-                    catch (Exception e)
-                    {
-                        throw new InvalidOperationException(
-                              "Show the Service-Provider before access Model", e);
-                    }
+                if (model == null)
+                    if (modelPath == "default")
+                        model = contentLoader.DefaultModel;
+                // TODO
+                    /*else if (modelPath != "")
+                        model = contentLoader.Load<Model>(modelPath);*/
                 return model;
             }
         }
@@ -32,17 +32,17 @@ namespace GeometricComposition
         public const int PitchCount = 12;
         public int[] PitchMap { set; get; }
 
+        private GCContentManager contentLoader = null;
         public FPPCache FPPCache { set; get; }
 
-        private ContentBuilder contentBuilder = new ContentBuilder();
-        private ContentManager contentManager = null;
-
+        //
         private string modelPath = "";
 
-        public GCFile(IServiceProvider service)
+        public GCFile(GCContentManager loader)
         {
-            Initialize(service);
+            contentLoader = loader;
 
+            PitchMap = new int[PitchCount];
             RandomPitchMap();
 
             FilePath = "";
@@ -55,9 +55,11 @@ namespace GeometricComposition
                 PitchMap[i] = i;
         }
 
-        public GCFile(string path, IServiceProvider service)
+        public GCFile(string path, GCContentManager loader)
         {
-            Initialize(service);
+            contentLoader = loader;
+
+            PitchMap = new int[PitchCount];
 
             FilePath = path;
             using (FileStream fs = File.OpenRead(path))
@@ -66,12 +68,6 @@ namespace GeometricComposition
                 { ReadFile(br); }
                 catch (Exception e)
                 { throw new InvalidDataException("Bad GC file", e); }
-        }
-
-        private void Initialize(IServiceProvider service)
-        {
-            contentManager = new ContentManager(service, contentBuilder.OutputDirectory);
-            PitchMap = new int[PitchCount];
         }
 
         public void Save()
@@ -106,25 +102,6 @@ namespace GeometricComposition
             bw.Write(modelPath);
             for (int i = 0; i < PitchCount; ++i)
                 bw.Write((Int32)PitchMap[i]);
-        }
-
-        void LoadModel()
-        {
-            contentManager.Unload();
-
-            contentBuilder.Clear();
-            string path = modelPath;
-            if (path == "default")
-                path = Path.Combine(RootDirectory, "GCDefaultContent\\HexagonalPrism.FBX");
-            contentBuilder.Add(path, "Model", null, "ModelProcessor");
-
-            string buildError = contentBuilder.Build();
-
-            if (string.IsNullOrEmpty(buildError))
-                try { Model = contentManager.Load<Model>("Model"); }
-                catch { throw; }
-            else
-                throw new InvalidOperationException(buildError);
         }
     }
 }

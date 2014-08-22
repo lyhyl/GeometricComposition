@@ -17,6 +17,14 @@ namespace GeometricComposition.GCMath
                     Face.PointB.Position - Face.PointC.Position);
                 Vector3 l = Point.Position - Face.PointA.Position;
                 float d = Math.Abs(Vector3.Dot(n, l)) / n.Length();
+
+                if (float.IsNaN(d))
+                {
+                    n = Vector3.Cross(Face.PointB.Position - Face.PointC.Position,
+                        Face.PointC.Position - Face.PointA.Position);
+                    d = Math.Abs(Vector3.Dot(n, l)) / n.Length();
+                }
+
                 return d < DistanceThreshold ? 0f : d;
             }
         }

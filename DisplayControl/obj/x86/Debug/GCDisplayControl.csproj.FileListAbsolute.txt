@@ -1,0 +1,5 @@
+H:\Projects\C#\GeometricComposition\GCDisplayControl\bin\x86\Debug\GCDisplayControl.dll
+H:\Projects\C#\GeometricComposition\GCDisplayControl\bin\x86\Debug\GCDisplayControl.pdb
+H:\Projects\C#\GeometricComposition\GCDisplayControl\obj\x86\Debug\GCDisplayControl.dll
+H:\Projects\C#\GeometricComposition\GCDisplayControl\obj\x86\Debug\GCDisplayControl.pdb
+H:\Projects\C#\GeometricComposition\GCDisplayControl\obj\x86\Debug\GCDisplayControl.csprojResolveAssemblyReference.cache

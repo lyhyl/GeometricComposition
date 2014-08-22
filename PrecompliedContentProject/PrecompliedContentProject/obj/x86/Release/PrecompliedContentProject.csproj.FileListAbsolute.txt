@@ -1,0 +1,8 @@
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Release\PrecompiledContent\GCDefaultContent\HexagonalPrism.xnb
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Release\PrecompiledContent\GCDefaultContent\Point.xnb
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Release\PrecompiledContent\GCDefaultContent\ModifierEffect.xnb
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Release\PrecompliedContentProject.dll
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Release\PrecompliedContentProject.pdb
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Release\PrecompliedContentProject.dll
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Release\PrecompliedContentProject.pdb

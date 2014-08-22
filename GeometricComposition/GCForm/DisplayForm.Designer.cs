@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ModelViewer = new GCXNA.ModelDisplayer();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayForm));
+            this.ModelViewer = new GeometricComposition.DisplayControl.GCModelDisplayer();
             this.SuspendLayout();
             // 
             // ModelViewer
             // 
-            this.ModelViewer.Animation = true;
             this.ModelViewer.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ModelViewer.Camera = null;
             this.ModelViewer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -52,6 +52,7 @@
             this.Controls.Add(this.ModelViewer);
             this.DockAreas = ((WeifenLuo.WinFormsUI.Docking.DockAreas)((WeifenLuo.WinFormsUI.Docking.DockAreas.Float | WeifenLuo.WinFormsUI.Docking.DockAreas.Document)));
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DisplayForm";
             this.Text = "DisplayForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DisplayForm_FormClosing);
@@ -61,7 +62,7 @@
 
         #endregion
 
-        private GCXNA.ModelDisplayer ModelViewer;
+        private GeometricComposition.DisplayControl.GCModelDisplayer ModelViewer;
 
 
     }

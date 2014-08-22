@@ -1,0 +1,7 @@
+H:\Projects\C#\GeometricComposition\DisplayControl\bin\x86\Debug\DisplayControl.dll
+H:\Projects\C#\GeometricComposition\DisplayControl\bin\x86\Debug\DisplayControl.pdb
+H:\Projects\C#\GeometricComposition\DisplayControl\bin\x86\Debug\XNALibrary.dll
+H:\Projects\C#\GeometricComposition\DisplayControl\bin\x86\Debug\XNALibrary.pdb
+H:\Projects\C#\GeometricComposition\DisplayControl\obj\x86\Debug\DisplayControl.csprojResolveAssemblyReference.cache
+H:\Projects\C#\GeometricComposition\DisplayControl\obj\x86\Debug\DisplayControl.dll
+H:\Projects\C#\GeometricComposition\DisplayControl\obj\x86\Debug\DisplayControl.pdb

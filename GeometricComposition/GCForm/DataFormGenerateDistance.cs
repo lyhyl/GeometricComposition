@@ -33,19 +33,9 @@ namespace GeometricComposition.GCForm
 
         private void ReadVertices(GCFile file)
         {
-            List<Vector3> tmppts = null;
-            if (file.Model == null)
-                return;
-            foreach (ModelMesh mm in file.Model.Meshes)
-                foreach (ModelMeshPart mmp in mm.MeshParts)
-                {
-                    long psize = mmp.VertexBuffer.VertexDeclaration.VertexStride / sizeof(float);
-                    float[] pcs = new float[mmp.VertexBuffer.VertexCount * psize];
-                    mmp.VertexBuffer.GetData(pcs);
-                    GetPositions(pcs, mmp.VertexBuffer.VertexDeclaration, out tmppts);
-                }
+            // TODO : if over 12 vertices...
             int id = 0;
-            foreach (Vector3 p in tmppts.Distinct())
+            foreach (Vector3 p in file.Model.DistinctVertices)
                 points.Add(new GCPoint(file.PitchMap[id++], p));
         }
 
@@ -132,8 +122,7 @@ namespace GeometricComposition.GCForm
                 childNodes.Sort((TreeNode a, TreeNode b) =>
                 { return comparePairs((GCFacePointPair)a.Tag, (GCFacePointPair)b.Tag); });
                 rootNode.Nodes.AddRange(childNodes.ToArray());
-                FacePointTreeView.Invoke((Func<TreeNode, int>)(FacePointTreeView.Nodes.Add), 
-                    new object[] { rootNode });
+                FacePointTreeView.Invoke((Func<TreeNode, int>)(FacePointTreeView.Nodes.Add), rootNode);
             }
         }
 

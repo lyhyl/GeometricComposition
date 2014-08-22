@@ -11,6 +11,7 @@
     <AssemblyName>GeometricComposition</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -21,6 +22,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -30,28 +33,77 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>gc.ico</ApplicationIcon>
+    <ApplicationIcon>Res\gc.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Force x86|AnyCPU'">
+    <OutputPath>bin\Force x86\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Force x86|x86'">
+    <OutputPath>bin\x86\Force x86\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Force x86|x64'">
+    <OutputPath>bin\x64\Force x86\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Build" />
-    <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FPPCache.cs" />
+    <Compile Include="GCContentManager.cs" />
     <Compile Include="GCForm\ModifierForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,15 +115,12 @@
     <Compile Include="GCMath\GCFace.cs" />
     <Compile Include="GCMath\GCFacePointPair.cs" />
     <Compile Include="GCMath\GCPoint.cs" />
-    <Compile Include="GCMusic\GCPitch.cs" />
-    <Compile Include="XNAContent\ContentBuilder.cs" />
-    <Compile Include="XNAContent\ErrorLogger.cs" />
     <Compile Include="GCFile.cs" />
-    <Compile Include="GeometricComposition.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GeometricComposition.Designer.cs">
-      <DependentUpon>GeometricComposition.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GCForm\DisplayForm.cs">
       <SubType>Form</SubType>
@@ -94,7 +143,7 @@
     <Compile Include="GCForm\DataFormGenerateDistance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportActionStateMediator.cs" />
+    <Compile Include="FormInteractor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GCForm\DisplayForm.resx">
@@ -106,8 +155,8 @@
     <EmbeddedResource Include="GCForm\ModifierForm.resx">
       <DependentUpon>ModifierForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GeometricComposition.resx">
-      <DependentUpon>GeometricComposition.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,9 +168,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="GCDefaultContent\HexagonalPrism.FBX">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <EmbeddedResource Include="InteractionDesign.sequencediagram.layout">
+      <DependentUpon>InteractionDesign.sequencediagram</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,19 +180,25 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="InteractionDesign.sequencediagram" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GCXNA\GCXNA.csproj">
-      <Project>{16b060ae-4635-44ae-82ec-0524144c3504}</Project>
-      <Name>GCXNA</Name>
+    <ProjectReference Include="..\DisplayControl\DisplayControl.csproj">
+      <Project>{b07dc33a-afad-48f7-ae84-35c3dbaeec05}</Project>
+      <Name>DisplayControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PrecompliedContentProject\PrecompliedContentProject\PrecompliedContentProject.csproj">
+      <Project>{8733e997-088c-4497-92b6-15d28fdc1d67}</Project>
+      <Name>PrecompliedContentProject</Name>
     </ProjectReference>
     <ProjectReference Include="..\WinFormsUI\WinFormsUI.csproj">
       <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
       <Name>WinFormsUI</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="gc.ico" />
+    <ProjectReference Include="..\XNALibrary\XNALibrary.csproj">
+      <Project>{82d5de84-9c38-4e38-8e41-ba5a95e5b47f}</Project>
+      <Name>XNALibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Res\gc.ico" />

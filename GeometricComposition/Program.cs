@@ -13,7 +13,7 @@ namespace GeometricComposition
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GeometricComposition());
+            Application.Run(new MainForm());
         }
     }
 }

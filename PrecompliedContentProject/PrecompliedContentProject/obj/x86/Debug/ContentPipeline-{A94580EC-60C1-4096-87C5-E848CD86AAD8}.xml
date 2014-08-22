@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>DefaultContent\HexagonalPrism.FBX</Source>
+      <Name>DefaultContent\HexagonalPrism</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Debug\PrecompiledContent\DefaultContent\HexagonalPrism.xnb</Output>
+      <Time>2014-07-21T14:10:42.0370866+08:00</Time>
+      <Dependency>
+        <Key>H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Debug\DefaultContent\HexagonalPrism_0.xml</Key>
+        <Value>2014-08-22T14:52:57.3309258+08:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>DefaultContent\Point.FBX</Source>
+      <Name>DefaultContent\Point</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Debug\PrecompiledContent\DefaultContent\Point.xnb</Output>
+      <Time>2014-07-11T16:00:29.9848004+08:00</Time>
+      <Dependency>
+        <Key>H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Debug\DefaultContent\Point_0.xml</Key>
+        <Value>2014-08-22T14:52:57.5289372+08:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>DefaultContent\GCEffect.fx</Source>
+      <Name>DefaultContent\GCEffect</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Debug\PrecompiledContent\DefaultContent\GCEffect.xnb</Output>
+      <Time>2014-08-22T13:01:13.4474856+08:00</Time>
+    </Item>
+    <Item>
+      <Source>DefaultContent\Font.spritefont</Source>
+      <Name>DefaultContent\Font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Debug\PrecompiledContent\DefaultContent\Font.xnb</Output>
+      <Time>2014-08-22T14:52:54.4007582+08:00</Time>
+    </Item>
+    <Item>
+      <Source>DefaultContent\HexagonalPrism.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Debug\DefaultContent\HexagonalPrism_0.xml</Output>
+      <Time>2014-07-21T14:10:42.0370866+08:00</Time>
+    </Item>
+    <Item>
+      <Source>DefaultContent\Point.FBX</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Debug\DefaultContent\Point_0.xml</Output>
+      <Time>2014-07-11T16:00:29.9848004+08:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{A94580EC-60C1-4096-87C5-E848CD86AAD8}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>H:\Projects\C#\GeometricComposition\PrecompiledContent\</RootDirectory>
+      <LoggerRootDirectory>H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\</LoggerRootDirectory>
+      <IntermediateDirectory>H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Debug\PrecompiledContent\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30+08:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2014-06-11T10:11:54.02582+08:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

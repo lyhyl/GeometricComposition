@@ -1,0 +1,9 @@
+H:\Projects\C#\GeometricComposition\XNALibrary\bin\Debug\XNALibrary.dll
+H:\Projects\C#\GeometricComposition\XNALibrary\bin\Debug\XNALibrary.pdb
+H:\Projects\C#\GeometricComposition\XNALibrary\bin\Debug\Microsoft.Xna.Framework.dll
+H:\Projects\C#\GeometricComposition\XNALibrary\bin\Debug\Microsoft.Xna.Framework.Graphics.dll
+H:\Projects\C#\GeometricComposition\XNALibrary\bin\Debug\Microsoft.Xna.Framework.xml
+H:\Projects\C#\GeometricComposition\XNALibrary\bin\Debug\Microsoft.Xna.Framework.Graphics.xml
+H:\Projects\C#\GeometricComposition\XNALibrary\obj\Debug\XNALibrary.csprojResolveAssemblyReference.cache
+H:\Projects\C#\GeometricComposition\XNALibrary\obj\Debug\XNALibrary.dll
+H:\Projects\C#\GeometricComposition\XNALibrary\obj\Debug\XNALibrary.pdb

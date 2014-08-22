@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using GeometricComposition.GCMusic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using System.Windows.Forms;
@@ -7,39 +8,49 @@ namespace GeometricComposition.GCForm
 {
     public partial class DisplayForm : DockingForm
     {
-        public Vector3[] ExtraVertices { set; get; }
+        public Vector3[] ExtraPoints
+        {
+            set { ModelViewer.AuxiliaryVertices = value; }
+            get { return ModelViewer.AuxiliaryVertices; }
+        }
+        public GCPitch[] ExtraPointsPitch
+        {
+            set { ModelViewer.AuxiliaryVerticesPitch = value; }
+            get { return ModelViewer.AuxiliaryVerticesPitch; }
+        }
         public GCFile File { private set; get; }
 
-        public DisplayForm(ReportActionStateMediator ras)
-            : base(ras)
+        public DisplayForm(FormInteractor fi)
+            : base(fi)
         {
             InitializeComponent();
-            ExtraVertices = new Vector3[4];
             Text = "Untitled";
-            File = new GCFile(ModelViewer.Services);
+            File = new GCFile(fi.ContentManager);
+            File.DisplayForm = this;
+            ModelViewer.Model = File.Model;
+            ModelViewer.VertexModel = Interactor.ContentManager.DefaultPointModel;
+            ModelViewer.spriteFont = Interactor.ContentManager.DefaultFont;
         }
 
-        public DisplayForm(ReportActionStateMediator ras, string filepath)
-            : base(ras)
+        public DisplayForm(FormInteractor fi, string filepath)
+            : base(fi)
         {
             InitializeComponent();
-            ExtraVertices = new Vector3[4];
             Text = Path.GetFileNameWithoutExtension(filepath);
-            File = new GCFile(filepath, ModelViewer.Services);
-            ModelViewer.VisibleChanged += delegate
-            {
-                if (ModelViewer.Visible)
-                    ModelViewer.Model = File.Model;
-            };
+            File = new GCFile(filepath, fi.ContentManager);
+            File.DisplayForm = this;
+            ModelViewer.Model = File.Model;
+            ModelViewer.VertexModel = Interactor.ContentManager.DefaultPointModel;
+            ModelViewer.spriteFont = Interactor.ContentManager.DefaultFont;
         }
 
         protected override void OnShown(System.EventArgs e)
         {
             // TODO
-            ActionReporter.StartAction("Opening file");
-            ActionReporter.ReportActionProgress("Opening file", 99);
+            Interactor.StartAction("Opening file");
+            Interactor.ReportActionProgress("Opening file", 99);
             base.OnShown(e);
-            ActionReporter.CompleteAction("Opening file");
+            Interactor.CompleteAction("Opening file");
         }
 
         private void DisplayForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -1,0 +1,8 @@
+H:\Projects\C#\GeometricComposition\GCDisplayControl\bin\Debug\GCDisplayControl.dll
+H:\Projects\C#\GeometricComposition\GCDisplayControl\bin\Debug\GCDisplayControl.pdb
+H:\Projects\C#\GeometricComposition\GCDisplayControl\bin\Debug\Microsoft.Xna.Framework.dll
+H:\Projects\C#\GeometricComposition\GCDisplayControl\bin\Debug\Microsoft.Xna.Framework.Graphics.dll
+H:\Projects\C#\GeometricComposition\GCDisplayControl\bin\Debug\Microsoft.Xna.Framework.xml
+H:\Projects\C#\GeometricComposition\GCDisplayControl\bin\Debug\Microsoft.Xna.Framework.Graphics.xml
+H:\Projects\C#\GeometricComposition\GCDisplayControl\obj\Debug\GCDisplayControl.dll
+H:\Projects\C#\GeometricComposition\GCDisplayControl\obj\Debug\GCDisplayControl.pdb

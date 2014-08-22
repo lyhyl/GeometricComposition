@@ -20,7 +20,7 @@ namespace GeometricComposition.GCForm
         private SortFPPOptions SortFPPTypeA = SortFPPOptions.PointID;
         private SortFPPOptions SortFPPTypeB = SortFPPOptions.Distance;
 
-        public DataForm(ReportActionStateMediator ras)
+        public DataForm(FormInteractor ras)
             : base(ras)
         {
             InitializeComponent();
@@ -32,11 +32,13 @@ namespace GeometricComposition.GCForm
         private void GenerateData(GCFile file)
         {
             // TODO
+            if (AsyncWorker.IsBusy)
+                return;
             while (AsyncWorker.IsBusy)
                 MessageBox.Show("Application is busy.\nPlease wait for a while.",
                     "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            ActionReporter.StartAction(CurrentActionName);
+            Interactor.StartAction(CurrentActionName);
             AsyncWork = delegate(BackgroundWorker bw)
             {
                 ReadVertices(file);
@@ -66,11 +68,11 @@ namespace GeometricComposition.GCForm
         { AsyncWork(sender as BackgroundWorker); }
 
         private void BackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        { ActionReporter.ReportActionProgress(CurrentActionName, e.ProgressPercentage); }
+        { Interactor.ReportActionProgress(CurrentActionName, e.ProgressPercentage); }
 
         private void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            ActionReporter.CompleteAction(CurrentActionName);
+            Interactor.CompleteAction(CurrentActionName);
             CurrentActionName = "";
             AsyncWork = null;
         }
@@ -84,11 +86,16 @@ namespace GeometricComposition.GCForm
 
         private void DisplayFPP(GCFacePointPair fpp)
         {
-            // TODO
+            Interactor.DisplayExtraPoints(fpp.Point, fpp.Face.PointA, fpp.Face.PointB, fpp.Face.PointC);
+            Interactor.DisplayExtraPointsPitch(fpp.Point.ID, fpp.Face.PointA.ID, fpp.Face.PointB.ID, fpp.Face.PointC.ID);
         }
 
         public override void HandleSelectedFileChanged(object sender, SelectedFileChangedEventArg e)
         {
+            // TODO
+            if (AsyncWorker.IsBusy)
+                return;
+
             ClearData();
             if (e.File == null)
                 return;
@@ -133,11 +140,11 @@ namespace GeometricComposition.GCForm
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
             CurrentActionName = RefreshActionName;
-            if (ActionReporter.File == null)
+            if (Interactor.CurrentFile == null)
                 return;
-            ActionReporter.File.FPPCache = null;
+            Interactor.CurrentFile.FPPCache = null;
             ClearData();
-            GenerateData(ActionReporter.File);
+            GenerateData(Interactor.CurrentFile);
         }
     }
 }

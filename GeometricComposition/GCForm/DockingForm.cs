@@ -4,14 +4,14 @@ namespace GeometricComposition.GCForm
 {
     public partial class DockingForm : DockContent
     {
-        protected ReportActionStateMediator ActionReporter = null;
+        protected FormInteractor Interactor = null;
 
         public DockingForm() { }
-        public DockingForm(ReportActionStateMediator ras)
+        public DockingForm(FormInteractor fi)
         {
             InitializeComponent();
 
-            ActionReporter = ras;
+            Interactor = fi;
         }
 
         public virtual void HandleSelectedFileChanged(object sender, SelectedFileChangedEventArg e)
