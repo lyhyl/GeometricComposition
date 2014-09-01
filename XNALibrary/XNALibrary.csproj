@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camera.cs" />
     <Compile Include="Control\LabelComboBoxControl.cs">
       <SubType>Component</SubType>
     </Compile>

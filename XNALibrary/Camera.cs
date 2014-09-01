@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace GeometricComposition.DisplayControl
+namespace GeometricComposition.XNALibrary
 {
     public class Camera
     {

@@ -95,7 +95,6 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Camera.cs" />
     <Compile Include="GCModelDisplayer.cs">
       <SubType>Component</SubType>
     </Compile>
