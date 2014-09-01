@@ -19,14 +19,14 @@ namespace GeometricComposition
         private DataForm dataForm = null;
         private ModifierForm modifierForm = null;
 
-        private FormInteractor formInteractor = null;
+        private Commander commander = null;
 
         public MainForm()
         {
             InitializeComponent();
 
             ContentManager = new GCContentManager(Handle);
-            formInteractor = new FormInteractor(this);
+            commander = new Commander(this);
 
             InitializeToolForms();
         }
@@ -34,7 +34,7 @@ namespace GeometricComposition
         private void InitializeToolForms()
         {
             // data form
-            dataForm = new DataForm(formInteractor);
+            dataForm = new DataForm(commander);
             dataForm.VisibleChanged +=
                 (object sender, EventArgs e) => { dataFormToolStripMenuItem.Checked = dataForm.Visible; };
             dataForm.Show(WorkDockPanel, DockState.DockLeft);
@@ -42,7 +42,7 @@ namespace GeometricComposition
             toolForms.Add(dataForm);
 
             // modifier form
-            modifierForm = new ModifierForm(formInteractor);
+            modifierForm = new ModifierForm(commander);
             modifierForm.VisibleChanged +=
                 (object sender, EventArgs e) => { modifierFormToolStripMenuItem.Checked = modifierForm.Visible; };
             modifierForm.Show(WorkDockPanel, DockState.DockRight);
@@ -71,7 +71,7 @@ namespace GeometricComposition
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DisplayForm dForm = new DisplayForm(formInteractor);
+            DisplayForm dForm = new DisplayForm(commander);
             InitializeAddDisplayForm(dForm);
             dForm.Show(WorkDockPanel, DockState.Document);
         }
@@ -85,7 +85,7 @@ namespace GeometricComposition
                 return;
             foreach (string filename in dialog.FileNames)
             {
-                DisplayForm dForm = new DisplayForm(formInteractor, filename);
+                DisplayForm dForm = new DisplayForm(commander, filename);
                 InitializeAddDisplayForm(dForm);
                 dForm.Show(WorkDockPanel, DockState.Document);
             }

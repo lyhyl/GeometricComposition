@@ -14,4 +14,10 @@ namespace GeometricComposition
     public delegate U FuncRef2<T0, T1, T2, out U>(ref T0 t0, ref T1 t1, T2 t2);
 
     public delegate U FuncRef3<T0, T1, T2, out U>(ref T0 t0, ref T1 t1, ref T2 t2);
+
+    public delegate void ActionRefOut<T0, T1>(ref T0 t0, out T1 t1);
+    public delegate void ActionRefOut<T0, T1, T2>(ref T0 t0, T1 t1, out T2 t2);
+
+    public delegate void ActionRef2<T0, T1>(ref T0 t0, ref T1 t1);
+    public delegate void ActionRef2<T0, T1, T2>(ref T0 t0, ref T1 t1, T2 t2);
 }

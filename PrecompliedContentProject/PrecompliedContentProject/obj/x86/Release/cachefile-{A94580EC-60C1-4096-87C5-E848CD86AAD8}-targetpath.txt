@@ -1,3 +1,4 @@
-PrecompiledContent\GCDefaultContent\HexagonalPrism.xnb
-PrecompiledContent\GCDefaultContent\Point.xnb
-PrecompiledContent\GCDefaultContent\ModifierEffect.xnb
+PrecompiledContent\DefaultContent\HexagonalPrism.xnb
+PrecompiledContent\DefaultContent\Point.xnb
+PrecompiledContent\DefaultContent\GCEffect.xnb
+PrecompiledContent\DefaultContent\Font.xnb

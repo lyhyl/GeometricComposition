@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AsyncWorker = new System.ComponentModel.BackgroundWorker();
             this.FacePointTreeView = new System.Windows.Forms.TreeView();
             this.DataToolGroupBox = new System.Windows.Forms.GroupBox();
             this.SortFPPComboBoxB = new System.Windows.Forms.ComboBox();
@@ -38,13 +37,6 @@
             this.SortFPPComboBoxA = new System.Windows.Forms.ComboBox();
             this.DataToolGroupBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // AsyncWorker
-            // 
-            this.AsyncWorker.WorkerReportsProgress = true;
-            this.AsyncWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_DoWork);
-            this.AsyncWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_ProgressChanged);
-            this.AsyncWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_RunWorkerCompleted);
             // 
             // FacePointTreeView
             // 
@@ -146,7 +138,6 @@
 
         #endregion
 
-        private System.ComponentModel.BackgroundWorker AsyncWorker;
         private System.Windows.Forms.TreeView FacePointTreeView;
         private System.Windows.Forms.GroupBox DataToolGroupBox;
         private System.Windows.Forms.Label SortFPPLabelA;

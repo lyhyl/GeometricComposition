@@ -1,5 +1,6 @@
 ﻿using GeometricComposition.DisplayControl;
 using GeometricComposition.XNALibrary;
+using GeometricComposition.XNALibrary.Model;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;

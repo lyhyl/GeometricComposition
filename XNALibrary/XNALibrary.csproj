@@ -43,16 +43,30 @@
     <Reference Include="System" />
     <Reference Include="mscorlib" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\LabelComboBoxControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\LabelValueControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\ModelModifierControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GCEffect.cs" />
-    <Compile Include="GCModel.cs" />
-    <Compile Include="GCPitch.cs" />
-    <Compile Include="ModelModifier.cs" />
-    <Compile Include="ModelModifierControl.cs" />
+    <Compile Include="GCMath.cs" />
+    <Compile Include="Model\BoundingSphere.cs" />
+    <Compile Include="Model\GCModel.cs" />
+    <Compile Include="Model\Subspan.cs" />
+    <Compile Include="Music\GCPitch.cs" />
+    <Compile Include="Modifier\ModelModifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScaleModifier.cs" />
-    <Compile Include="TwistModifier.cs" />
+    <Compile Include="Modifier\ScaleModifier.cs" />
+    <Compile Include="Modifier\TwistModifier.cs" />
     <Compile Include="VertexPositionNormalColor.cs" />
   </ItemGroup>
   <ItemGroup>

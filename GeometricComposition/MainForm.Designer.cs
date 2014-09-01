@@ -46,9 +46,9 @@
             // 
             // StatusBar
             // 
-            this.StatusBar.Location = new System.Drawing.Point(0, 240);
+            this.StatusBar.Location = new System.Drawing.Point(0, 540);
             this.StatusBar.Name = "StatusBar";
-            this.StatusBar.Size = new System.Drawing.Size(284, 22);
+            this.StatusBar.Size = new System.Drawing.Size(784, 22);
             this.StatusBar.TabIndex = 3;
             this.StatusBar.Text = "statusStrip1";
             // 
@@ -57,7 +57,7 @@
             this.WorkDockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WorkDockPanel.Location = new System.Drawing.Point(0, 25);
             this.WorkDockPanel.Name = "WorkDockPanel";
-            this.WorkDockPanel.Size = new System.Drawing.Size(284, 215);
+            this.WorkDockPanel.Size = new System.Drawing.Size(784, 515);
             this.WorkDockPanel.TabIndex = 4;
             this.WorkDockPanel.Theme = this.MyVS2012LightTheme;
             this.WorkDockPanel.ActiveContentChanged += new System.EventHandler(this.WorkDockPanel_ActiveContentChanged);
@@ -69,7 +69,7 @@
             this.viewToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(284, 25);
+            this.MainMenu.Size = new System.Drawing.Size(784, 25);
             this.MainMenu.TabIndex = 7;
             this.MainMenu.Text = "menuStrip1";
             // 
@@ -141,18 +141,18 @@
             this.modifierFormToolStripMenuItem.Text = "&Modifier Form";
             this.modifierFormToolStripMenuItem.Click += new System.EventHandler(this.modifierFormToolStripMenuItem_Click);
             // 
-            // GeometricComposition
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.WorkDockPanel);
             this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.MainMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.MainMenu;
-            this.Name = "GeometricComposition";
+            this.Name = "MainForm";
             this.Text = "Geometric Composition";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MainMenu.ResumeLayout(false);

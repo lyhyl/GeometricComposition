@@ -1,0 +1,6 @@
+H:\Projects\C#\GeometricComposition\DisplayControl\bin\x86\Release\DisplayControl.dll
+H:\Projects\C#\GeometricComposition\DisplayControl\bin\x86\Release\DisplayControl.pdb
+H:\Projects\C#\GeometricComposition\DisplayControl\bin\x86\Release\XNALibrary.dll
+H:\Projects\C#\GeometricComposition\DisplayControl\obj\x86\Release\DisplayControl.csprojResolveAssemblyReference.cache
+H:\Projects\C#\GeometricComposition\DisplayControl\obj\x86\Release\DisplayControl.dll
+H:\Projects\C#\GeometricComposition\DisplayControl\obj\x86\Release\DisplayControl.pdb

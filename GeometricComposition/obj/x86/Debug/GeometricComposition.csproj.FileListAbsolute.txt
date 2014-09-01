@@ -22,3 +22,4 @@ H:\Projects\C#\GeometricComposition\GeometricComposition\bin\x86\Debug\Precompil
 H:\Projects\C#\GeometricComposition\GeometricComposition\bin\x86\Debug\PrecompiledContent\DefaultContent\Point.xnb
 H:\Projects\C#\GeometricComposition\GeometricComposition\bin\x86\Debug\PrecompiledContent\DefaultContent\GCEffect.xnb
 H:\Projects\C#\GeometricComposition\GeometricComposition\bin\x86\Debug\PrecompiledContent\DefaultContent\Font.xnb
+H:\Projects\C#\GeometricComposition\GeometricComposition\obj\x86\Debug\GeometricComposition.GCForm.NotificationForm.resources

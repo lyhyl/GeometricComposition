@@ -1,0 +1,2 @@
+H:\Projects\C#\GeometricComposition\XNALibrary\bin\x86\Release\XNALibrary.dll
+H:\Projects\C#\GeometricComposition\XNALibrary\obj\x86\Release\XNALibrary.dll

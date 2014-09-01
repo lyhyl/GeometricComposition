@@ -8,15 +8,14 @@
 #endregion
 
 #region Using Statements
-using System;
-using System.Diagnostics;
-using System.Windows.Forms;
+using GeometricComposition.XNALibrary;
+using GeometricComposition.XNALibrary.Model;
+using GeometricComposition.XNALibrary.Music;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Content;
-using GeometricComposition.XNALibrary;
+using System;
 using System.Collections.Generic;
-using GeometricComposition.GCMusic;
+using System.Windows.Forms;
 
 #endregion
 
@@ -30,18 +29,7 @@ namespace GeometricComposition.DisplayControl
     public class GCModelDisplayer : GraphicsDeviceControl
     {
         public List<GCModel> AuxiliaryModels { set; get; }
-        private GCModel model;
-        private float modelRadius;
-        public GCModel Model
-        {
-            get { return model; }
-            set
-            {
-                model = value;
-                if (model != null)
-                    MeasureModel();
-            }
-        }
+        public GCModel Model { get; set; }
 
         public float VertexSize { set; get; }
         public GCModel VertexModel { set; get; }
@@ -54,6 +42,8 @@ namespace GeometricComposition.DisplayControl
         public Matrix ViewMatrix { get { return Camera.ViewMatrix; } }
         public Matrix ProjectionMatrix { private set; get; }
         public Matrix TransformMatrix { get { return WorldMatrix * ViewMatrix * ProjectionMatrix; } }
+
+        private float viewDistFactor = 3;
 
         private VertexBuffer faceVertexBuffer = null;
         private GCEffect faceEffect;
@@ -87,11 +77,12 @@ namespace GeometricComposition.DisplayControl
         private bool UserControllingView = false;
 
         private const int WHEEL_DELTA = 120;
-
+        // TODO needs fouse
         protected override void OnMouseWheel(MouseEventArgs e)
         {
-            modelRadius -= e.Delta / WHEEL_DELTA;
-            modelRadius = Math.Max(.01f, modelRadius);
+            float delta = e.Delta / WHEEL_DELTA;
+            viewDistFactor -= delta * 0.1f;
+            viewDistFactor = GCMath.Clamp(viewDistFactor, 0.01f, float.MaxValue);
             Invalidate();
             base.OnMouseWheel(e);
         }
@@ -148,7 +139,7 @@ namespace GeometricComposition.DisplayControl
             if (AuxiliaryVertices != null && VertexModel != null)
                 for (int i = 0; i < 4; i++)
                     DrawVertex(AuxiliaryVertices[i]);
-            if (model != null)
+            if (Model != null)
                 DrawModel();
 
             //None
@@ -160,7 +151,7 @@ namespace GeometricComposition.DisplayControl
             //Fore Face
             GraphicsDevice.RasterizerState = rsCullForeFace;
 
-            if (model != null)
+            if (Model != null)
                 DrawModel();
             if (AuxiliaryVertices != null && VertexModel != null)
                 for (int i = 0; i < 4; i++)
@@ -236,24 +227,23 @@ namespace GeometricComposition.DisplayControl
 
         private void SetupMatrix()
         {
+            float modelRadius = Model.BoundingSphere.Radius;
+            Vector3 modelCenter = Model.BoundingSphere.Center;
+
             //World
             WorldMatrix = Matrix.CreateRotationY(mouseMoveX * mouseMoveScale) *
                 Matrix.CreateRotationX(mouseMoveY * mouseMoveScale);
 
             //View
-            Camera.Target = Vector3.Zero;
-            Camera.Position = Camera.Target + new Vector3(0, modelRadius, modelRadius * 2);
+            float dis = modelRadius * viewDistFactor;
+            Camera.Target = modelCenter;
+            Camera.Position = Camera.Target + new Vector3(0, dis, dis);
 
             //Projection
             float aspectRatio = GraphicsDevice.Viewport.AspectRatio;
             float nearClip = modelRadius / 100;
             float farClip = modelRadius * 100;
             ProjectionMatrix = Matrix.CreatePerspectiveFieldOfView(1, aspectRatio, nearClip, farClip);
-        }
-
-        void MeasureModel()
-        {
-            modelRadius = 15;
         }
     }
 }

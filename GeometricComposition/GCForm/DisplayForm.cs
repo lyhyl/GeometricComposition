@@ -1,6 +1,5 @@
-﻿using GeometricComposition.GCMusic;
+﻿using GeometricComposition.XNALibrary.Music;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -20,37 +19,37 @@ namespace GeometricComposition.GCForm
         }
         public GCFile File { private set; get; }
 
-        public DisplayForm(FormInteractor fi)
-            : base(fi)
+        public DisplayForm(Commander com)
+            : base(com)
         {
             InitializeComponent();
             Text = "Untitled";
-            File = new GCFile(fi.ContentManager);
+            File = new GCFile(com.ContentManager);
             File.DisplayForm = this;
             ModelViewer.Model = File.Model;
-            ModelViewer.VertexModel = Interactor.ContentManager.DefaultPointModel;
-            ModelViewer.spriteFont = Interactor.ContentManager.DefaultFont;
+            ModelViewer.VertexModel = Commander.ContentManager.DefaultPointModel;
+            ModelViewer.spriteFont = Commander.ContentManager.DefaultFont;
         }
 
-        public DisplayForm(FormInteractor fi, string filepath)
-            : base(fi)
+        public DisplayForm(Commander com, string filepath)
+            : base(com)
         {
             InitializeComponent();
             Text = Path.GetFileNameWithoutExtension(filepath);
-            File = new GCFile(filepath, fi.ContentManager);
+            File = new GCFile(filepath, com.ContentManager);
             File.DisplayForm = this;
             ModelViewer.Model = File.Model;
-            ModelViewer.VertexModel = Interactor.ContentManager.DefaultPointModel;
-            ModelViewer.spriteFont = Interactor.ContentManager.DefaultFont;
+            ModelViewer.VertexModel = Commander.ContentManager.DefaultPointModel;
+            ModelViewer.spriteFont = Commander.ContentManager.DefaultFont;
         }
 
         protected override void OnShown(System.EventArgs e)
         {
             // TODO
-            Interactor.StartAction("Opening file");
-            Interactor.ReportActionProgress("Opening file", 99);
+            Commander.StartAction("Opening file");
+            Commander.ReportActionProgress("Opening file", 99);
             base.OnShown(e);
-            Interactor.CompleteAction("Opening file");
+            Commander.CompleteAction("Opening file");
         }
 
         private void DisplayForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -10,11 +10,11 @@ namespace GeometricComposition
     public class FPPCache
     {
         // hexagonal prism
-        private const int InitCapacity = 1980;
+        private const int InitialCapacity = 1980;
         private List<GCFacePointPair> cache = null;
         public FPPCache()
         {
-            cache = new List<GCFacePointPair>(InitCapacity);
+            cache = new List<GCFacePointPair>(InitialCapacity);
         }
         public FPPCache(IEnumerable<GCFacePointPair> fpps)
         {
@@ -24,7 +24,7 @@ namespace GeometricComposition
         {
             get { return index < cache.Count ? cache[index] : null; }
         }
-        internal void CopyTo(List<GCFacePointPair> fpps)
+        public void CopyTo(List<GCFacePointPair> fpps)
         {
             fpps.AddRange(cache);
         }

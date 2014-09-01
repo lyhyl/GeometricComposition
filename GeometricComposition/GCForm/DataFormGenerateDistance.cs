@@ -1,10 +1,9 @@
 ﻿using GeometricComposition.GCMath;
-using GeometricComposition.GCMusic;
+using GeometricComposition.XNALibrary.Music;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace GeometricComposition.GCForm
@@ -93,7 +92,7 @@ namespace GeometricComposition.GCForm
 
         private void DisplayPairsTreeInvoke()
         {
-            FacePointTreeView.Invoke((Action)SuspendLayout);
+            Invoke((Action)SuspendLayout);
             switch (SortFPPTypeA)
             {
                 case SortFPPOptions.PointID:
@@ -107,28 +106,36 @@ namespace GeometricComposition.GCForm
                 case SortFPPOptions.FaceID: break;
                 default: break;
             }
-            FacePointTreeView.Invoke((Action)ResumeLayout);
+            Invoke((Action)ResumeLayout);
         }
 
         private void GenerateTreeNodes(string rootFormat, string childFormat,
-            FuncRef<int, string, List<TreeNode>> getChildNodes,
+            ActionRef2<SortedSet<TreeNode>,int, string> getChildNodes,
             Func<GCFacePointPair, GCFacePointPair, int> comparePairs)
         {
-            int i = 0;
-            while (i < fpps.Count)
+            int index = 0;
+            while (index < fpps.Count)
             {
-                TreeNode rootNode = new TreeNode(fpps[i].ToString(rootFormat));
-                List<TreeNode> childNodes = getChildNodes(ref i, childFormat);
-                childNodes.Sort((TreeNode a, TreeNode b) =>
-                { return comparePairs((GCFacePointPair)a.Tag, (GCFacePointPair)b.Tag); });
-                rootNode.Nodes.AddRange(childNodes.ToArray());
+                TreeNode rootNode = new TreeNode(fpps[index].ToString(rootFormat));
+                SortedSet<TreeNode> childNodes =
+                    new SortedSet<TreeNode>(
+                        Comparer<TreeNode>.Create((TreeNode a, TreeNode b) =>
+                        {
+                            return comparePairs((GCFacePointPair)a.Tag, (GCFacePointPair)b.Tag);
+                        }));
+
+                getChildNodes(ref childNodes, ref index, childFormat);
+
+                TreeNode[] nodes = new TreeNode[childNodes.Count];
+                childNodes.CopyTo(nodes);
+                rootNode.Nodes.AddRange(nodes);
+
                 FacePointTreeView.Invoke((Func<TreeNode, int>)(FacePointTreeView.Nodes.Add), rootNode);
             }
         }
 
-        private List<TreeNode> GetChildNodesByPitch(ref int index, string format)
+        private void GetChildNodesByPitch(ref SortedSet<TreeNode> childNodes, ref int index, string format)
         {
-            List<TreeNode> childNodes = new List<TreeNode>();
             GCPitch curr = fpps[index].Point.ID;
             while (index < fpps.Count && fpps[index].Point.ID == curr)
             {
@@ -137,12 +144,10 @@ namespace GeometricComposition.GCForm
                 childNodes.Add(node);
                 index++;
             }
-            return childNodes;
         }
 
-        private List<TreeNode> GetChildNodesByDistance(ref int index, string format)
+        private void GetChildNodesByDistance(ref SortedSet<TreeNode> childNodes, ref int index, string format)
         {
-            List<TreeNode> childNodes = new List<TreeNode>();
             float curr = fpps[index].Distance;
             while (index < fpps.Count && Math.Abs(fpps[index].Distance - curr) < 1e-6f)
             {
@@ -151,7 +156,6 @@ namespace GeometricComposition.GCForm
                 childNodes.Add(node);
                 index++;
             }
-            return childNodes;
         }
 
         private void DisplayPairsTree()
@@ -163,6 +167,11 @@ namespace GeometricComposition.GCForm
         {
             cache.CopyTo(fpps);
             DisplayPairsTreeInvoke();
+        }
+
+        private void WriteCache(GCFile file)
+        {
+            file.FPPCache = new FPPCache(fpps);
         }
 
         private int ComparePairsPointID(GCFacePointPair a, GCFacePointPair b)

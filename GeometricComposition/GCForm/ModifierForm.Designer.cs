@@ -31,12 +31,14 @@
             this.ModifierListBox = new System.Windows.Forms.ListBox();
             this.AddBtn = new System.Windows.Forms.Button();
             this.ToolGroupBox = new System.Windows.Forms.GroupBox();
-            this.Removebtn = new System.Windows.Forms.Button();
+            this.RemoveBtn = new System.Windows.Forms.Button();
             this.ModifierComboBox = new System.Windows.Forms.ComboBox();
             this.ModifierListPropertySplitContainer = new System.Windows.Forms.SplitContainer();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.ToolGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ModifierListPropertySplitContainer)).BeginInit();
             this.ModifierListPropertySplitContainer.Panel1.SuspendLayout();
+            this.ModifierListPropertySplitContainer.Panel2.SuspendLayout();
             this.ModifierListPropertySplitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,11 +49,13 @@
             this.ModifierListBox.ItemHeight = 12;
             this.ModifierListBox.Location = new System.Drawing.Point(0, 0);
             this.ModifierListBox.Name = "ModifierListBox";
-            this.ModifierListBox.Size = new System.Drawing.Size(284, 138);
+            this.ModifierListBox.Size = new System.Drawing.Size(284, 137);
             this.ModifierListBox.TabIndex = 0;
+            this.ModifierListBox.SelectedIndexChanged += new System.EventHandler(this.ModifierListBox_SelectedIndexChanged);
             // 
             // AddBtn
             // 
+            this.AddBtn.Enabled = false;
             this.AddBtn.Location = new System.Drawing.Point(139, 20);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(23, 23);
@@ -62,7 +66,7 @@
             // 
             // ToolGroupBox
             // 
-            this.ToolGroupBox.Controls.Add(this.Removebtn);
+            this.ToolGroupBox.Controls.Add(this.RemoveBtn);
             this.ToolGroupBox.Controls.Add(this.ModifierComboBox);
             this.ToolGroupBox.Controls.Add(this.AddBtn);
             this.ToolGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
@@ -73,15 +77,16 @@
             this.ToolGroupBox.TabStop = false;
             this.ToolGroupBox.Text = "Add/Remove";
             // 
-            // Removebtn
+            // RemoveBtn
             // 
-            this.Removebtn.Location = new System.Drawing.Point(168, 20);
-            this.Removebtn.Name = "Removebtn";
-            this.Removebtn.Size = new System.Drawing.Size(23, 23);
-            this.Removebtn.TabIndex = 3;
-            this.Removebtn.Text = "-";
-            this.Removebtn.UseVisualStyleBackColor = true;
-            this.Removebtn.Click += new System.EventHandler(this.Removebtn_Click);
+            this.RemoveBtn.Enabled = false;
+            this.RemoveBtn.Location = new System.Drawing.Point(168, 20);
+            this.RemoveBtn.Name = "RemoveBtn";
+            this.RemoveBtn.Size = new System.Drawing.Size(23, 23);
+            this.RemoveBtn.TabIndex = 3;
+            this.RemoveBtn.Text = "-";
+            this.RemoveBtn.UseVisualStyleBackColor = true;
+            this.RemoveBtn.Click += new System.EventHandler(this.RemoveBtn_Click);
             // 
             // ModifierComboBox
             // 
@@ -104,9 +109,23 @@
             // ModifierListPropertySplitContainer.Panel1
             // 
             this.ModifierListPropertySplitContainer.Panel1.Controls.Add(this.ModifierListBox);
+            // 
+            // ModifierListPropertySplitContainer.Panel2
+            // 
+            this.ModifierListPropertySplitContainer.Panel2.Controls.Add(this.flowLayoutPanel);
             this.ModifierListPropertySplitContainer.Size = new System.Drawing.Size(284, 209);
-            this.ModifierListPropertySplitContainer.SplitterDistance = 138;
+            this.ModifierListPropertySplitContainer.SplitterDistance = 137;
             this.ModifierListPropertySplitContainer.TabIndex = 3;
+            // 
+            // flowLayoutPanel
+            // 
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(284, 68);
+            this.flowLayoutPanel.TabIndex = 0;
             // 
             // ModifierForm
             // 
@@ -121,6 +140,7 @@
             this.Text = "Modifier";
             this.ToolGroupBox.ResumeLayout(false);
             this.ModifierListPropertySplitContainer.Panel1.ResumeLayout(false);
+            this.ModifierListPropertySplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ModifierListPropertySplitContainer)).EndInit();
             this.ModifierListPropertySplitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -132,8 +152,9 @@
         private System.Windows.Forms.ListBox ModifierListBox;
         private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.GroupBox ToolGroupBox;
-        private System.Windows.Forms.Button Removebtn;
+        private System.Windows.Forms.Button RemoveBtn;
         private System.Windows.Forms.ComboBox ModifierComboBox;
         private System.Windows.Forms.SplitContainer ModifierListPropertySplitContainer;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
     }
 }

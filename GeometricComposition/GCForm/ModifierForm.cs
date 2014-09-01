@@ -1,4 +1,6 @@
 ﻿using GeometricComposition.XNALibrary;
+using GeometricComposition.XNALibrary.Control;
+using GeometricComposition.XNALibrary.Modifier;
 using System;
 using System.Collections.Generic;
 
@@ -6,23 +8,29 @@ namespace GeometricComposition.GCForm
 {
     public partial class ModifierForm : DockingForm
     {
-        public ModifierForm(FormInteractor ras)
-            : base(ras)
+        public ModifierForm(Commander com)
+            : base(com)
         {
             InitializeComponent();
 
-            ModifierComboBox.Text = "Scale";
+            ModifierComboBox.Text = "---None---";
         }
 
         private List<ModelModifier> Modifiers = new List<ModelModifier>();
-        public ModelModifier[] ModifiersArray { get { return Modifiers.ToArray(); } }
 
         public override void HandleSelectedFileChanged(object sender, SelectedFileChangedEventArg e)
         {
             Modifiers.Clear();
             ModifierListBox.Items.Clear();
             if (e.File == null)
+            {
+                AddBtn.Enabled = false;
+                RemoveBtn.Enabled = false;
                 return;
+            }
+            AddBtn.Enabled = true;
+            RemoveBtn.Enabled = true;
+
             Modifiers.AddRange(e.File.Model.Modifiers);
             ModifierListBox.Items.AddRange(e.File.Model.Modifiers.ToArray());
         }
@@ -36,21 +44,31 @@ namespace GeometricComposition.GCForm
                     mm = new ScaleModifier(); break;
                 case 1:
                     mm = new TwistModifier(); break;
-                default: break;
+                default: return;
             }
             Modifiers.Add(mm);
             ModifierListBox.Items.Add(mm);
-            if (Interactor.CurrentFile != null)
-                Interactor.CurrentFile.Model.Modifiers = Modifiers;
+            if (Commander.CurrentFile != null)
+                Commander.CurrentFile.Model.Modifiers = Modifiers;
         }
 
-        private void Removebtn_Click(object sender, EventArgs e)
+        private void RemoveBtn_Click(object sender, EventArgs e)
         {
             if (Modifiers.Count == 0)
                 return;
             int index = Math.Max(ModifierListBox.SelectedIndex, 0);
             Modifiers.RemoveAt(index);
             ModifierListBox.Items.RemoveAt(index);
+            flowLayoutPanel.Controls.Clear();
+        }
+
+        private void ModifierListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = ModifierListBox.SelectedIndex;
+            if (index == -1) return;
+            ModelModifier modifier = Modifiers[index];
+            flowLayoutPanel.Controls.Clear();
+            flowLayoutPanel.Controls.AddRange(modifier.Controls.ToArray());
         }
     }
 }

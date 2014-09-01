@@ -1,4 +1,4 @@
-﻿using GeometricComposition.GCMusic;
+﻿using GeometricComposition.XNALibrary.Music;
 using Microsoft.Xna.Framework;
 
 namespace GeometricComposition.GCMath
