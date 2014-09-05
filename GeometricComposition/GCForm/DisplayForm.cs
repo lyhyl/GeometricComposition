@@ -23,12 +23,21 @@ namespace GeometricComposition.GCForm
             : base(com)
         {
             InitializeComponent();
-            Text = "Untitled";
+            Text = GetUntitledFileName();
             File = new GCFile(com.ContentManager);
             File.DisplayForm = this;
             ModelViewer.Model = File.Model;
             ModelViewer.VertexModel = Commander.ContentManager.DefaultPointModel;
             ModelViewer.spriteFont = Commander.ContentManager.DefaultFont;
+            ModelViewer.MouseDown += (object sender, MouseEventArgs e) => { Activate(); };
+        }
+
+        private static ulong untitledFileCount = 0;
+        private static string GetUntitledFileName()
+        {
+            string name = "Untitled_" + untitledFileCount.ToString();
+            untitledFileCount++;
+            return name;
         }
 
         public DisplayForm(Commander com, string filepath)
@@ -41,6 +50,7 @@ namespace GeometricComposition.GCForm
             ModelViewer.Model = File.Model;
             ModelViewer.VertexModel = Commander.ContentManager.DefaultPointModel;
             ModelViewer.spriteFont = Commander.ContentManager.DefaultFont;
+            ModelViewer.MouseDown += (object sender, MouseEventArgs e) => { Activate(); };
         }
 
         protected override void OnShown(System.EventArgs e)

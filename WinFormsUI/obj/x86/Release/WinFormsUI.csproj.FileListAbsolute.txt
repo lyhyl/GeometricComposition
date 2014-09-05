@@ -8,3 +8,7 @@ H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Release\WeifenLuo.WinForm
 H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Release\WinFormsUI.csproj.GenerateResource.Cache
 H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Release\WeifenLuo.WinFormsUI.Docking.dll
 H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Release\WeifenLuo.WinFormsUI.Docking.pdb
+H:\Projects\C#\GeometricComposition\WinFormsUI\bin\Release\license.txt
+H:\Projects\C#\GeometricComposition\WinFormsUI\bin\Release\WeifenLuo.WinFormsUI.Docking.dll
+H:\Projects\C#\GeometricComposition\WinFormsUI\bin\Release\WeifenLuo.WinFormsUI.Docking.pdb
+H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Release\WinFormsUI.csprojResolveAssemblyReference.cache

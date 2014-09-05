@@ -63,6 +63,10 @@ namespace WeifenLuo.WinFormsUI.Docking
 
             m_dummyContent = new DockContent();
             ResumeLayout();
+
+            //Wingkou
+            Dragable = true;
+            NTHeight = NTWidth = 0;
         }
 
         private Color m_BackColor;

@@ -79,7 +79,7 @@ namespace WeifenLuo.WinFormsUI.Docking
                 DragSource = dragSource;
                 RectSplitter = rectSplitter;
 
-                if (!BeginDrag())
+                if (!DockPanel.Dragable || !BeginDrag())
                 {
                     DragSource = null;
                     return;

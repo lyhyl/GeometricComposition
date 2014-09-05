@@ -43,7 +43,7 @@
             this.FacePointTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FacePointTreeView.Location = new System.Drawing.Point(0, 66);
             this.FacePointTreeView.Name = "FacePointTreeView";
-            this.FacePointTreeView.Size = new System.Drawing.Size(384, 196);
+            this.FacePointTreeView.Size = new System.Drawing.Size(299, 196);
             this.FacePointTreeView.TabIndex = 4;
             this.FacePointTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.FacePointTreeView_AfterSelect);
             // 
@@ -57,7 +57,7 @@
             this.DataToolGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.DataToolGroupBox.Location = new System.Drawing.Point(0, 0);
             this.DataToolGroupBox.Name = "DataToolGroupBox";
-            this.DataToolGroupBox.Size = new System.Drawing.Size(384, 66);
+            this.DataToolGroupBox.Size = new System.Drawing.Size(299, 66);
             this.DataToolGroupBox.TabIndex = 5;
             this.DataToolGroupBox.TabStop = false;
             this.DataToolGroupBox.Text = "Options";
@@ -119,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 262);
+            this.ClientSize = new System.Drawing.Size(299, 262);
             this.Controls.Add(this.FacePointTreeView);
             this.Controls.Add(this.DataToolGroupBox);
             this.DockAreas = ((WeifenLuo.WinFormsUI.Docking.DockAreas)(((((WeifenLuo.WinFormsUI.Docking.DockAreas.Float | WeifenLuo.WinFormsUI.Docking.DockAreas.DockLeft) 

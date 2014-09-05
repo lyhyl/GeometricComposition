@@ -118,14 +118,21 @@ namespace WeifenLuo.WinFormsUI.Docking
                 double proportion = status.Proportion;
                 if (status.LogicalBounds.Width <= 0 || status.LogicalBounds.Height <= 0)
                     return;
-                else if (status.DisplayingAlignment == DockAlignment.Left)
-                    proportion += ((double)offset) / (double)status.LogicalBounds.Width;
-                else if (status.DisplayingAlignment == DockAlignment.Right)
-                    proportion -= ((double)offset) / (double)status.LogicalBounds.Width;
-                else if (status.DisplayingAlignment == DockAlignment.Top)
-                    proportion += ((double)offset) / (double)status.LogicalBounds.Height;
-                else
-                    proportion -= ((double)offset) / (double)status.LogicalBounds.Height;
+                switch (status.DisplayingAlignment)
+                {
+                    case DockAlignment.Left:
+                        proportion += ((double)offset) / (double)status.LogicalBounds.Width;
+                        break;
+                    case DockAlignment.Right:
+                        proportion -= ((double)offset) / (double)status.LogicalBounds.Width;
+                        break;
+                    case DockAlignment.Top:
+                        proportion += ((double)offset) / (double)status.LogicalBounds.Height;
+                        break;
+                    case DockAlignment.Bottom:
+                        proportion -= ((double)offset) / (double)status.LogicalBounds.Height;
+                        break;
+                }
 
                 DockPane.SetNestedDockingProportion(proportion);
             }

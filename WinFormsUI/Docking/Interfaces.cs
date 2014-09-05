@@ -4,20 +4,26 @@ using System.Windows.Forms;
 
 namespace WeifenLuo.WinFormsUI.Docking
 {
-    public interface IDockContent
+    public interface IDockContent : IDockConentFloatSetting
     {
-        DockContentHandler DockHandler	{	get;	}
+        DockContentHandler DockHandler { get; }
         void OnActivated(EventArgs e);
         void OnDeactivate(EventArgs e);
     }
 
+    public interface IDockConentFloatSetting
+    {
+        FormBorderStyle FloatWindowBorderStyle { get; }
+        Size FloatWindowDefalutSize { get; }
+    }
+
     public interface INestedPanesContainer
     {
-        DockState DockState	{	get;	}
-        Rectangle DisplayingRectangle	{	get;	}
-        NestedPaneCollection NestedPanes	{	get;	}
-        VisibleNestedPaneCollection VisibleNestedPanes	{	get;	}
-        bool IsFloat	{	get;	}
+        DockState DockState { get; }
+        Rectangle DisplayingRectangle { get; }
+        NestedPaneCollection NestedPanes { get; }
+        VisibleNestedPaneCollection VisibleNestedPanes { get; }
+        bool IsFloat { get; }
     }
 
     internal interface IDragSource

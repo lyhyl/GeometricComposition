@@ -38,9 +38,10 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifierFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +67,8 @@
             // 
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.viewToolStripMenuItem});
+            this.viewToolStripMenuItem,
+            this.projectToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Size = new System.Drawing.Size(784, 25);
@@ -107,19 +109,11 @@
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.formToolStripMenuItem});
+            this.dataFormToolStripMenuItem,
+            this.modifierFormToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.viewToolStripMenuItem.Text = "&View";
-            // 
-            // formToolStripMenuItem
-            // 
-            this.formToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dataFormToolStripMenuItem,
-            this.modifierFormToolStripMenuItem});
-            this.formToolStripMenuItem.Name = "formToolStripMenuItem";
-            this.formToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
-            this.formToolStripMenuItem.Text = "&Form";
             // 
             // dataFormToolStripMenuItem
             // 
@@ -140,6 +134,21 @@
             this.modifierFormToolStripMenuItem.Tag = "modifierForm";
             this.modifierFormToolStripMenuItem.Text = "&Modifier Form";
             this.modifierFormToolStripMenuItem.Click += new System.EventHandler(this.modifierFormToolStripMenuItem_Click);
+            // 
+            // projectToolStripMenuItem
+            // 
+            this.projectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingToolStripMenuItem});
+            this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
+            this.projectToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
+            this.projectToolStripMenuItem.Text = "&Project";
+            // 
+            // settingToolStripMenuItem
+            // 
+            this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingToolStripMenuItem.Text = "&Setting";
+            this.settingToolStripMenuItem.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -166,16 +175,17 @@
 
         private WeifenLuo.WinFormsUI.Docking.DockPanel WorkDockPanel;
         private WeifenLuo.WinFormsUI.Docking.VS2012LightTheme MyVS2012LightTheme;
-        public System.Windows.Forms.StatusStrip StatusBar;
+        private System.Windows.Forms.StatusStrip StatusBar;
         private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem formToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataFormToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modifierFormToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
     }
 }
 

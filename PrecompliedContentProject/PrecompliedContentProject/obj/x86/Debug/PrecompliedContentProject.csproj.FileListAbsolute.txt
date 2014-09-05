@@ -1,9 +1,10 @@
-H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Debug\PrecompliedContentProject.pdb
-H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Debug\PrecompliedContentProject.pdb
-H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Debug\PrecompliedContentProject.dll
-H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Debug\PrecompliedContentProject.dll
 H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Debug\PrecompiledContent\DefaultContent\HexagonalPrism.xnb
 H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Debug\PrecompiledContent\DefaultContent\Point.xnb
 H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Debug\PrecompiledContent\DefaultContent\GCEffect.xnb
 H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Debug\PrecompiledContent\DefaultContent\Font.xnb
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Debug\PrecompliedContentProject.dll
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\bin\x86\Debug\PrecompliedContentProject.pdb
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Debug\PrecompliedContentProject.dll
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Debug\PrecompliedContentProject.pdb
+H:\Projects\C#\GeometricComposition\PrecompliedContentProject\PrecompliedContentProject\obj\x86\Debug\PrecompliedContentProject.csprojResolveAssemblyReference.cache

@@ -1,6 +1,7 @@
 ﻿using GeometricComposition.GCForm;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
@@ -18,12 +19,15 @@ namespace GeometricComposition
 
         private DataForm dataForm = null;
         private ModifierForm modifierForm = null;
+        private ProjectSettingForm projectSettingForm = null;
 
         private Commander commander = null;
 
         public MainForm()
         {
             InitializeComponent();
+
+            WorkDockPanel.NTWidth = 200;
 
             ContentManager = new GCContentManager(Handle);
             commander = new Commander(this);
@@ -48,6 +52,11 @@ namespace GeometricComposition
             modifierForm.Show(WorkDockPanel, DockState.DockRight);
             SelectedFileChanged += modifierForm.HandleSelectedFileChanged;
             toolForms.Add(modifierForm);
+
+            // project setting form
+            projectSettingForm = new ProjectSettingForm(commander);
+            SelectedFileChanged += projectSettingForm.HandleSelectedFileChanged;
+            toolForms.Add(projectSettingForm);
         }
 
         void WorkDockPanel_ActiveContentChanged(object sender, EventArgs e)
@@ -130,6 +139,12 @@ namespace GeometricComposition
             else
                 modifierForm.Show();
             modifierFormToolStripMenuItem.Checked = modifierForm.Visible;
+        }
+
+        private void settingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //projectSettingForm.Show(WorkDockPanel, new Rectangle(projectSettingForm.Location, projectSettingForm.Size));
+            projectSettingForm.Show(WorkDockPanel, DockState.Float);
         }
     }
 }

@@ -1,1 +1,0 @@
-H:\Projects\C#\GeometricComposition\PrecompiledContent\obj\x86\Release\PrecompiledContent.contentprojResolveAssemblyReference.cache

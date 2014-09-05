@@ -4,6 +4,7 @@ using GeometricComposition.XNALibrary.Model;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -14,19 +15,19 @@ namespace GeometricComposition
         public DisplayForm DisplayForm = null;
         public string FilePath { private set; get; }
 
-        private GCModel model = null;
+        private GCModel _model = null;
         public GCModel Model
         {
-            private set { model = value; }
+            private set { _model = value; }
             get
             {
-                if (model == null)
+                if (_model == null)
                     if (modelPath == "default")
-                        model = contentLoader.DefaultModel;
+                        _model = contentLoader.DefaultModel;
                 // TODO
                     /*else if (modelPath != "")
                         model = contentLoader.Load<Model>(modelPath);*/
-                return model;
+                return _model;
             }
         }
 
@@ -36,7 +37,6 @@ namespace GeometricComposition
         private GCContentManager contentLoader = null;
         public FPPCache FPPCache { set; get; }
 
-        //
         private string modelPath = "";
 
         public GCFile(GCContentManager loader)
@@ -52,8 +52,16 @@ namespace GeometricComposition
 
         private void RandomPitchMap()
         {
+            List<int> ids = new List<int>(PitchCount);
+            Random rand = new Random();
             for (int i = 0; i < PitchCount; i++)
-                PitchMap[i] = i;
+                ids.Add(i);
+            for (int i = 0; i < PitchCount; i++)
+            {
+                int ind = rand.Next(ids.Count);
+                PitchMap[i] = ids[ind];
+                ids.RemoveAt(ind);
+            }
         }
 
         public GCFile(string path, GCContentManager loader)

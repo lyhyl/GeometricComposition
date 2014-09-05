@@ -186,6 +186,7 @@ namespace WeifenLuo.WinFormsUI.Docking
             }
         }
 
+        //Wingkou
         void ISplitterDragSource.MoveSplitter(int offset)
         {
             if ((Control.ModifierKeys & Keys.Shift) != 0)
@@ -194,31 +195,59 @@ namespace WeifenLuo.WinFormsUI.Docking
             Rectangle rectDockArea = DockPanel.DockArea;
             if (DockState == DockState.DockLeft && rectDockArea.Width > 0)
             {
-                if (DockPanel.DockLeftPortion > 1)
-                    DockPanel.DockLeftPortion = Width + offset;
+                if (DockPanel.NTWidth != 0)
+                    DockPanel.DockLeftPortion = DockPanel.GetNTimesWidth(Width + offset, MinimumNTimesSizeN);
                 else
-                    DockPanel.DockLeftPortion += ((double)offset) / (double)rectDockArea.Width;
+                    if (DockPanel.DockLeftPortion > 1)
+                        DockPanel.DockLeftPortion = Width + offset;
+                    else
+                        DockPanel.DockLeftPortion += ((double)offset) / (double)rectDockArea.Width;
             }
             else if (DockState == DockState.DockRight && rectDockArea.Width > 0)
             {
-                if (DockPanel.DockRightPortion > 1)
-                    DockPanel.DockRightPortion = Width - offset;
+                if (DockPanel.NTWidth != 0)
+                    DockPanel.DockRightPortion = DockPanel.GetNTimesWidth(Width - offset, MinimumNTimesSizeN);
                 else
-                    DockPanel.DockRightPortion -= ((double)offset) / (double)rectDockArea.Width;
+                    if (DockPanel.DockRightPortion > 1)
+                        DockPanel.DockRightPortion = Width - offset;
+                    else
+                        DockPanel.DockRightPortion -= ((double)offset) / (double)rectDockArea.Width;
             }
             else if (DockState == DockState.DockBottom && rectDockArea.Height > 0)
             {
-                if (DockPanel.DockBottomPortion > 1)
-                    DockPanel.DockBottomPortion = Height - offset;
+                if (DockPanel.NTHeight != 0)
+                    DockPanel.DockBottomPortion = DockPanel.GetNTimesHeight(Height - offset, MinimumNTimesSizeN);
                 else
-                    DockPanel.DockBottomPortion -= ((double)offset) / (double)rectDockArea.Height;
+                    if (DockPanel.DockBottomPortion > 1)
+                        DockPanel.DockBottomPortion = Height - offset;
+                    else
+                        DockPanel.DockBottomPortion -= ((double)offset) / (double)rectDockArea.Height;
             }
             else if (DockState == DockState.DockTop && rectDockArea.Height > 0)
             {
-                if (DockPanel.DockTopPortion > 1)
-                    DockPanel.DockTopPortion = Height + offset;
+                if (DockPanel.NTHeight != 0)
+                    DockPanel.DockTopPortion = DockPanel.GetNTimesHeight(Height + offset, MinimumNTimesSizeN);
                 else
-                    DockPanel.DockTopPortion += ((double)offset) / (double)rectDockArea.Height;
+                    if (DockPanel.DockTopPortion > 1)
+                        DockPanel.DockTopPortion = Height + offset;
+                    else
+                        DockPanel.DockTopPortion += ((double)offset) / (double)rectDockArea.Height;
+            }
+        }
+
+        private int MinimumNTimesSizeN
+        {
+            get
+            {
+                int c = 1;
+                foreach (var p in VisibleNestedPanes)
+                {
+                    NestedDockingStatus nds = p.NestedDockingStatus;
+                    if (nds.DisplayingAlignment == DockAlignment.Left ||
+                        nds.DisplayingAlignment == DockAlignment.Right)
+                        c++;
+                }
+                return c;
             }
         }
 

@@ -30,7 +30,7 @@ namespace GeometricComposition.XNALibrary.Model
         public GCEffect Effect = null;
 
         private bool modifiedModifiers = false;
-        private List<ModelModifier> _modifiers = null;
+        private List<ModelModifier> _modifiers = new List<ModelModifier>();
         public List<ModelModifier> Modifiers
         {
             set { _modifiers = value; modifiedModifiers = true; }
@@ -91,6 +91,11 @@ namespace GeometricComposition.XNALibrary.Model
 
             Modifiers = new List<ModelModifier>();
             BoundingSphere = new BoundingSphere(vertices);
+        }
+
+        public GCModel Clone()
+        {
+            return new GCModel(device, vertices, indices);
         }
 
         private void InitializeColorVertices(int len)

@@ -1,6 +1,9 @@
-H:\Projects\C#\GeometricComposition\WinFormsUI\bin\x86\Debug\license.txt
 H:\Projects\C#\GeometricComposition\WinFormsUI\bin\x86\Debug\WeifenLuo.WinFormsUI.Docking.dll
+H:\Projects\C#\GeometricComposition\WinFormsUI\bin\x86\Debug\license.txt
 H:\Projects\C#\GeometricComposition\WinFormsUI\bin\x86\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+H:\Projects\C#\GeometricComposition\WinFormsUI\bin\Debug\license.txt
+H:\Projects\C#\GeometricComposition\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
+H:\Projects\C#\GeometricComposition\WinFormsUI\bin\Debug\WeifenLuo.WinFormsUI.Docking.pdb
 H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Debug\WeifenLuo.WinFormsUI.Docking.Resources.resources
 H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Debug\WeifenLuo.WinFormsUI.Docking.ResourcesVS2003.resources
 H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Debug\WeifenLuo.WinFormsUI.Docking.Strings.resources
@@ -8,3 +11,4 @@ H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Debug\WeifenLuo.WinFormsU
 H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Debug\WinFormsUI.csproj.GenerateResource.Cache
 H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Debug\WeifenLuo.WinFormsUI.Docking.dll
 H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Debug\WeifenLuo.WinFormsUI.Docking.pdb
+H:\Projects\C#\GeometricComposition\WinFormsUI\obj\x86\Debug\WinFormsUI.csprojResolveAssemblyReference.cache

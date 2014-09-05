@@ -16,12 +16,12 @@ namespace GeometricComposition.GCForm
             ModifierComboBox.Text = "---None---";
         }
 
-        private List<ModelModifier> Modifiers = new List<ModelModifier>();
+        private List<ModelModifier> Modifiers = null;
 
         public override void HandleSelectedFileChanged(object sender, SelectedFileChangedEventArg e)
         {
-            Modifiers.Clear();
             ModifierListBox.Items.Clear();
+            ModelModifiersPanel.Controls.Clear();
             if (e.File == null)
             {
                 AddBtn.Enabled = false;
@@ -31,8 +31,8 @@ namespace GeometricComposition.GCForm
             AddBtn.Enabled = true;
             RemoveBtn.Enabled = true;
 
-            Modifiers.AddRange(e.File.Model.Modifiers);
-            ModifierListBox.Items.AddRange(e.File.Model.Modifiers.ToArray());
+            Modifiers =  e.File.Model.Modifiers;
+            ModifierListBox.Items.AddRange(Modifiers.ToArray());
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
@@ -48,8 +48,6 @@ namespace GeometricComposition.GCForm
             }
             Modifiers.Add(mm);
             ModifierListBox.Items.Add(mm);
-            if (Commander.CurrentFile != null)
-                Commander.CurrentFile.Model.Modifiers = Modifiers;
         }
 
         private void RemoveBtn_Click(object sender, EventArgs e)
@@ -59,7 +57,7 @@ namespace GeometricComposition.GCForm
             int index = Math.Max(ModifierListBox.SelectedIndex, 0);
             Modifiers.RemoveAt(index);
             ModifierListBox.Items.RemoveAt(index);
-            flowLayoutPanel.Controls.Clear();
+            ModelModifiersPanel.Controls.Clear();
         }
 
         private void ModifierListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,8 +65,8 @@ namespace GeometricComposition.GCForm
             int index = ModifierListBox.SelectedIndex;
             if (index == -1) return;
             ModelModifier modifier = Modifiers[index];
-            flowLayoutPanel.Controls.Clear();
-            flowLayoutPanel.Controls.AddRange(modifier.Controls.ToArray());
+            ModelModifiersPanel.Controls.Clear();
+            ModelModifiersPanel.Controls.AddRange(modifier.Controls.ToArray());
         }
     }
 }

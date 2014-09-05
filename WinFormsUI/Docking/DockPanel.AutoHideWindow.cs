@@ -504,31 +504,43 @@ namespace WeifenLuo.WinFormsUI.Docking
                 IDockContent content = ActiveContent;
                 if (DockState == DockState.DockLeftAutoHide && rectDockArea.Width > 0)
                 {
-                    if (content.DockHandler.AutoHidePortion < 1)
-                        content.DockHandler.AutoHidePortion += ((double)offset) / (double)rectDockArea.Width;
+                    if (DockPanel.NTWidth != 0)
+                        content.DockHandler.AutoHidePortion = DockPanel.GetNTimesWidth(Width + offset, 1);
                     else
-                        content.DockHandler.AutoHidePortion = Width + offset;
+                        if (content.DockHandler.AutoHidePortion < 1)
+                            content.DockHandler.AutoHidePortion += ((double)offset) / (double)rectDockArea.Width;
+                        else
+                            content.DockHandler.AutoHidePortion = Width + offset;
                 }
                 else if (DockState == DockState.DockRightAutoHide && rectDockArea.Width > 0)
                 {
-                    if (content.DockHandler.AutoHidePortion < 1)
-                        content.DockHandler.AutoHidePortion -= ((double)offset) / (double)rectDockArea.Width;
+                    if (DockPanel.NTWidth != 0)
+                        content.DockHandler.AutoHidePortion = DockPanel.GetNTimesWidth(Width - offset, 1);
                     else
-                        content.DockHandler.AutoHidePortion = Width - offset;
+                        if (content.DockHandler.AutoHidePortion < 1)
+                            content.DockHandler.AutoHidePortion -= ((double)offset) / (double)rectDockArea.Width;
+                        else
+                            content.DockHandler.AutoHidePortion = Width - offset;
                 }
                 else if (DockState == DockState.DockBottomAutoHide && rectDockArea.Height > 0)
                 {
-                    if (content.DockHandler.AutoHidePortion < 1)
-                        content.DockHandler.AutoHidePortion -= ((double)offset) / (double)rectDockArea.Height;
+                    if (DockPanel.NTHeight != 0)
+                        content.DockHandler.AutoHidePortion = DockPanel.GetNTimesHeight(Height - offset, 1);
                     else
-                        content.DockHandler.AutoHidePortion = Height - offset;
+                        if (content.DockHandler.AutoHidePortion < 1)
+                            content.DockHandler.AutoHidePortion -= ((double)offset) / (double)rectDockArea.Height;
+                        else
+                            content.DockHandler.AutoHidePortion = Height - offset;
                 }
                 else if (DockState == DockState.DockTopAutoHide && rectDockArea.Height > 0)
                 {
-                    if (content.DockHandler.AutoHidePortion < 1)
-                        content.DockHandler.AutoHidePortion += ((double)offset) / (double)rectDockArea.Height;
+                    if (DockPanel.NTHeight != 0)
+                        content.DockHandler.AutoHidePortion = DockPanel.GetNTimesHeight(Height + offset, 1);
                     else
-                        content.DockHandler.AutoHidePortion = Height + offset;
+                        if (content.DockHandler.AutoHidePortion < 1)
+                            content.DockHandler.AutoHidePortion += ((double)offset) / (double)rectDockArea.Height;
+                        else
+                            content.DockHandler.AutoHidePortion = Height + offset;
                 }
             }
 

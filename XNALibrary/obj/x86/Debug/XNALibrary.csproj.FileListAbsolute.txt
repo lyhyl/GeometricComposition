@@ -2,3 +2,4 @@ H:\Projects\C#\GeometricComposition\XNALibrary\bin\x86\Debug\XNALibrary.dll
 H:\Projects\C#\GeometricComposition\XNALibrary\bin\x86\Debug\XNALibrary.pdb
 H:\Projects\C#\GeometricComposition\XNALibrary\obj\x86\Debug\XNALibrary.dll
 H:\Projects\C#\GeometricComposition\XNALibrary\obj\x86\Debug\XNALibrary.pdb
+H:\Projects\C#\GeometricComposition\XNALibrary\obj\x86\Debug\XNALibrary.csprojResolveAssemblyReference.cache

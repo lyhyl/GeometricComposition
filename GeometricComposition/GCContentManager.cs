@@ -38,7 +38,7 @@ namespace GeometricComposition
             {
                 if (defaultModel == null)
                     defaultModel = new GCModel(contentManager.Load<Model>("HexagonalPrism"));
-                return defaultModel;
+                return defaultModel.Clone();
             }
         }
         private GCModel defaultPointModel = null;

@@ -122,6 +122,12 @@
     <Compile Include="GCForm\NotificationForm.Designer.cs">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GCForm\ProjectSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GCForm\ProjectSettingForm.Designer.cs">
+      <DependentUpon>ProjectSettingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GCUtility.cs" />
     <Compile Include="SelectedFileChangedEvent.cs" />
     <Compile Include="GCMath\GCFace.cs" />
@@ -170,6 +176,9 @@
     <EmbeddedResource Include="GCForm\NotificationForm.resx">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GCForm\ProjectSettingForm.resx">
+      <DependentUpon>ProjectSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,9 +192,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="InteractionDesign.sequencediagram.layout">
-      <DependentUpon>InteractionDesign.sequencediagram</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -195,7 +201,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="InteractionDesign.sequencediagram" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DisplayControl\DisplayControl.csproj">
@@ -223,6 +228,10 @@
     <Content Include="Res\stop_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>del $(TargetDir)PrecompliedContentProject.dll
+del $(TargetDir)PrecompliedContentProject.pdb</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
